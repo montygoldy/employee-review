@@ -24,21 +24,21 @@ class AdminDashboard extends Component {
           <h3 className="page-heading">Admin Dashboard</h3>
           <section className="top-info flexFit">
             <div className="top-info__info-box">
-              <i class="fas fa-users" />
+              <i className="fas fa-users" />
               <div className="countWrapper">
                 <span className="countInfo">Total number of employees</span>
                 <span className="number">10</span>
               </div>
             </div>
             <div className="top-info__info-box">
-              <i class="far fa-star" />
+              <i className="far fa-star" />
               <div className="countWrapper">
                 <span className="countInfo">Total number of Feedback</span>
                 <span className="number">10</span>
               </div>
             </div>
             <div className="top-info__info-box">
-              <i class="fas fa-users" />
+              <i className="fas fa-users" />
               <div className="countWrapper">
                 <span className="countInfo">Total number of Users</span>
                 <span className="number">10</span>
@@ -82,7 +82,7 @@ class AdminDashboard extends Component {
                   onChange={this.onChange}
                 />
                 <button className="button button--dark">
-                  <i class="fas fa-user-plus" />Add Employee
+                  <i className="fas fa-user-plus" />Add Employee
                 </button>
               </form>
             </div>

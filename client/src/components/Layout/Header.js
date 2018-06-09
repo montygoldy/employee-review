@@ -11,7 +11,7 @@ class Header extends Component {
     //     </li>
     //     <li className="header__nav-item">
     //       <button>
-    //         <i class="fas fa-sign-out-alt" />
+    //         <i className="fas fa-sign-out-alt" />
     //         Logout
     //       </button>
     //     </li>
@@ -23,13 +23,13 @@ class Header extends Component {
       <ul className="flexFit">
         <li className="header__nav-item">
           <Link className="header__nav-link button" to="/register">
-            <i class="fas fa-user-plus"> </i>
+            <i className="fas fa-user-plus"> </i>
             Sign Up
           </Link>
         </li>
         <li className="header__nav-item">
           <Link className="header__nav-link button" to="/login">
-            <i class="fas fa-sign-in-alt"> </i>
+            <i className="fas fa-sign-in-alt"> </i>
             Login
           </Link>
         </li>

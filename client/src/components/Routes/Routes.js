@@ -4,7 +4,7 @@ import Landing from "../Landing-page/Landing";
 import NotFound from "../NotFound/NotFound";
 import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
-import EmployeeDashboard from "../Employee-page/EmployeeDashboard";
+import EmployeeDashboard from "../Employee-page/Container/EmployeeDashboard";
 import AdminDashboard from "../Admin-page/AdminDashboard";
 import StandardLayout from "../Layout/StandardLayout";
 import HomeLayout from "../Layout/HomeLayout";
