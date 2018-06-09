@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  border: 1px solid rgba($text-color-dark, .1);
+  border-collapse: collapse;
+  td,
+  th {
+    padding: 1rem;
+    border: 1px solid rgba($text-color-dark, .1);
+    text-align: left;
+  }
+  th {
+    background: $primary-color;
+    color: $color-white;
+    font-weight: 500;
+  }
+  tbody {
+    background: $input-bg;
+    font-weight: 300;
+  }
+  button {
+    font-size: 1.5rem;
+  }
+}

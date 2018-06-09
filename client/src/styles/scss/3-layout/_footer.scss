@@ -1,2 +1,10 @@
-@import "header";
-@import "footer";
+footer {
+  @include gradientMain;
+  height: 50px;
+  color: $color-white;
+  width: 100%;
+  font-weight: 300;
+  font-family: $secondary-font;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}

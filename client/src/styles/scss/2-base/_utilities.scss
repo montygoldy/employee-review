@@ -4,7 +4,13 @@
   height: 100%;
 }
 
-.flex {
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexFit {
   display: flex;
   justify-content: space-between;
   align-items: center;

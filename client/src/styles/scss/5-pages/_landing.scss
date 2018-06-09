@@ -1,0 +1,33 @@
+.homepage {
+  height: 100vh;
+  &__logo {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    color: $primary-color-light;
+  }
+  &__video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+  }
+  &__block {
+    border: 20px solid rgba(0, 0, 0, .4);
+    border-radius: 5px;
+    min-width: 35rem;
+    .wrapper {
+      background: $primary-color-light;
+      padding: 20px;
+    }
+    h2 {
+      font-family: $primary-font;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  }
+}

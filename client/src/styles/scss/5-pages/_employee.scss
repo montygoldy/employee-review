@@ -1,0 +1,11 @@
+section.employee-review {
+  padding: 3rem 0;
+  .article-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    article {
+      margin-bottom: 4%;
+    }
+  }
+}

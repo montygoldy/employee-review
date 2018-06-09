@@ -1,0 +1,42 @@
+.card {
+  width: 30%;
+  height: auto;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  overflow: hidden;
+  background: $color-white;
+  &__head {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__body {
+    padding: 1.2rem;
+    .name {
+      font-size: 2.2rem;
+      font-family: $secondary-font;
+      font-weight: 700;
+    }
+    .title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .info {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+  }
+  &__footer {
+    border-top: 1px solid rgba($text-color-dark, .1);
+    padding: 2.5rem;
+    margin-top: 1rem;
+    button {
+      i {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}

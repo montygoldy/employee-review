@@ -1,0 +1,47 @@
+.button,
+a.button {
+  border: none;
+  background: none;
+  color: $color-white;
+  font-family: $primary-font;
+  border: 3px solid $color-white;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  @include transition(all, .3s);
+  border-radius: 3px;
+  i {
+    margin-right: 5px;
+  }
+  &:hover {
+    background: $color-white;
+    color: $text-color-dark;
+    border-bottom: 3px solid $color-white;
+  }
+}
+
+.button--white {
+  font-size: 2rem !important;
+  text-transform: uppercase;
+  background: $color-white !important;
+  color: $text-color-dark !important;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  &:hover {
+    background: $text-color-dark !important;
+    color: $color-white !important;
+    border-color: $text-color-dark !important;
+  }
+}
+
+.button--dark {
+  @include gradientMain;
+  padding: 1.2rem 2.6rem;
+  border-radius: 10rem;
+  font-size: 1.8rem;
+  border: none;
+  &:hover {
+    box-shadow: 0 2px 6px rgba($primary-color-light, .7);
+    @include gradientMain;
+    border: none;
+  }
+}

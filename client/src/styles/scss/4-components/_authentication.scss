@@ -1,0 +1,54 @@
+.auth {
+  margin-top: 5rem;
+  min-width: 30rem;
+  flex-direction: column;
+  position: relative;
+  &__head {
+    @include gradientMain;
+    min-width: 30rem;
+    width: 50%;
+    height: 10rem;
+    border-radius: 5px;
+    h3 {
+      font-family: $primary-font !important;
+      font-weight: 500;
+      color: $color-white;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, .1)
+    }
+  }
+  &__form {
+    min-width: 30rem;
+    width: 45%;
+    padding: 4rem;
+    background: $color-white;
+    position: absolute;
+    top: 8rem;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .1);
+  }
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1.5rem;
+  &__label {
+    text-transform: capitalize;
+    text-align: left;
+    min-width: 10rem;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    font-family: $primary-font;
+    letter-spacing: 1px;
+  }
+  &__input {
+    font-weight: 300;
+    border: none;
+    width: 75%;
+    font-size: 1.5rem;
+    background: $input-bg;
+    padding: 1rem;
+    color: $text-color-dark;
+  }
+}

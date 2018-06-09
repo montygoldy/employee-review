@@ -1,3 +1,30 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args
+}
+
+@mixin gradientMain() {
+  background: $primary-color;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $primary-color, $primary-color-light);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $primary-color, $primary-color-light);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin textGradient() {
+  background-image: -webkit-linear-gradient(to left, $primary-color, $primary-color-light);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(to left, $primary-color, $primary-color-light);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 //Breakpoints for different screens
 @mixin respond($breakpoint) {
   @if $breakpoint==xSmall {
