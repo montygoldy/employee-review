@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "json-server": "^0.14.0",
     "node-sass": "^4.9.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -19,7 +20,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sass": "sass --watch src/styles/scss:src/styles/css",
-    "sass:build": "sass --update src/styles/scss:src/styles/css"
+    "sass:build": "sass --update src/styles/scss:src/styles/css",
+    "json-server": "json-server --watch db.json --port 3004"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",

@@ -2,20 +2,42 @@ import React, { Component } from "react";
 import Table from "../../Reusable/Table";
 import { connect } from "react-redux";
 import InputField from "../../Reusable/FormElements/InputField";
-import { getEmployees } from "../../../redux/Actions/employeeActions";
+import {
+  getEmployees,
+  addEmployee
+} from "../../../redux/Actions/employeeActions";
 
 class AdminDashboard extends Component {
-  state = {
-    name: "",
-    title: "",
-    info: "",
-    image: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      title: "",
+      info: "",
+      image: ""
+    };
+  }
 
-  onChange = e => {
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { name, title, info } = this.state;
+    const employeeData = {
+      name,
+      title,
+      info
+    };
+    this.props.addEmployee(employeeData);
+    this.setState({
+      name: "",
+      title: "",
+      info: ""
     });
   };
 
@@ -61,34 +83,37 @@ class AdminDashboard extends Component {
               <h5>Add Employee</h5>
               <form>
                 <InputField
-                  name="Name"
+                  name="name"
                   placeholder="min. 6 characters"
                   type="text"
                   value={this.state.name}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                 />
                 <InputField
-                  name="Title"
+                  name="title"
                   placeholder="title"
                   type="text"
                   value={this.state.title}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                 />
                 <InputField
                   name="info"
                   placeholder="Info"
                   type="text"
                   value={this.state.info}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                 />
                 <InputField
                   name="image"
                   placeholder="Image"
                   type="text"
                   value={this.state.image}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                 />
-                <button className="button button--dark">
+                <button
+                  className="button button--dark"
+                  onClick={this.handleSubmit}
+                >
                   <i className="fas fa-user-plus" />Add Employee
                 </button>
               </form>
@@ -110,5 +135,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getEmployees }
+  { getEmployees, addEmployee }
 )(AdminDashboard);

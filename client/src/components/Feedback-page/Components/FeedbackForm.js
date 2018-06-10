@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
 import StarRatingComponent from "react-star-rating-component";
+import { withRouter } from "react-router-dom";
 
 class FeedbackForm extends Component {
-  state = {
-    pro: "",
-    con: "",
-    comments: "",
-    rating: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      pro: "",
+      con: "",
+      comments: "",
+      rating: 0
+    };
+  }
 
   onChange = e => {
     const { name, value } = e.target;
@@ -21,6 +25,12 @@ class FeedbackForm extends Component {
     this.setState({
       rating: nextValue
     });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.history.push("/review");
+    this.setState({ pro: "", con: "", comments: "", rating: "" });
   };
 
   render() {
@@ -41,7 +51,7 @@ class FeedbackForm extends Component {
             onChange={this.onChange}
           />
           <TextareaField
-            name="Comments"
+            name="comments"
             placeholder="Anything you would like to add"
             value={this.state.comments}
             onChange={this.onChange}
@@ -58,7 +68,9 @@ class FeedbackForm extends Component {
             </div>
           </div>
           <div className="submit-button flexCenter">
-            <button className="button button--dark">Submit Feedback</button>
+            <button className="button button--dark" onClick={this.handleSubmit}>
+              Submit Feedback
+            </button>
           </div>
         </form>
       </section>
@@ -66,4 +78,4 @@ class FeedbackForm extends Component {
   }
 }
 
-export default FeedbackForm;
+export default withRouter(FeedbackForm);

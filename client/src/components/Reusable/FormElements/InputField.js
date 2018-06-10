@@ -26,11 +26,13 @@ InputField.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  label: PropTypes.bool
 };
 
 InputField.defaultProps = {
-  type: "text"
+  type: "text",
+  label: true
 };
 
 export default InputField;

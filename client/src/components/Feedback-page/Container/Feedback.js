@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import EmployeeInfo from "../Components/EmployeeInfo";
 import FeedbackForm from "../Components/FeedbackForm";
-
+import { connect } from "react-redux";
 class Feedback extends Component {
   componentDidMount = () => {
     // this.props.getEmployeeDetails(this.props.match.params.id);
@@ -22,4 +22,11 @@ class Feedback extends Component {
   }
 }
 
-export default Feedback;
+const mapStatetoProps = state => ({
+  feedbacks: state.feedback
+});
+
+export default connect(
+  mapStatetoProps,
+  {}
+)(Feedback);

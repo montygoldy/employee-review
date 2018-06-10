@@ -1,0 +1,96 @@
+{
+  "employees": [{
+      "id": 1,
+      "name": "John Doe",
+      "title": "Senior Manager",
+      "employeeId": "11223344",
+      "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "dateOfJoining": "10/12/2017"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "title": "VP of Engineering",
+      "employeeId": "12345678",
+      "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "dateOfJoining": "12/10/2015"
+    },
+    {
+      "id": 3,
+      "name": "Johny Depp",
+      "title": "Junior Developerr",
+      "employeeId": "13579135",
+      "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "dateOfJoining": "10/6/2017"
+    },
+    {
+      "id": 4,
+      "name": "Robert Downy",
+      "title": "Senior Developer",
+      "employeeId": "11111111",
+      "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "dateOfJoining": "10/12/2014"
+    },
+    {
+      "id": 5,
+      "name": "Tom Cruise",
+      "title": "Hiring Manager",
+      "employeeId": "22222222",
+      "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "dateOfJoining": "04/12/2013"
+    }
+  ],
+  "feedbacks": [{
+      "id": 1,
+      "employeeId": "11223344",
+      "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "rating": 7
+    },
+    {
+      "id": 2,
+      "employeeId": "11223344",
+      "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "rating": 2
+    },
+    {
+      "id": 3,
+      "employeeId": "11223344",
+      "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "employeeId": "11223344",
+      "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "rating": 9
+    }
+  ],
+  "users": [{
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "isAdmin": true,
+    "userId": 1
+  }, {
+    "name": "jane",
+    "email": "jane@gmail.com",
+    "password": "jane",
+    "isAdmin": false,
+    "userId": 2
+  }, {
+    "name": "jonh",
+    "email": "jonh@gmail.com",
+    "password": "john",
+    "isAdmin": false,
+    "userId": 3
+  }]
+
+}
