@@ -16,10 +16,14 @@ export const addEmployee = employeeData => dispatch => {
 
 //Get Employees
 export const getEmployees = () => dispatch => {
-  axios.get("https://jsonplaceholder.typicode.com/posts").then(response =>
-    dispatch({
-      type: GET_EMPLOYEES,
-      payload: response.data
-    })
-  );
+  dispatch({ type: EMPLOYEES_LOADING });
+  axios
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then(response =>
+      dispatch({
+        type: GET_EMPLOYEES,
+        payload: response.data
+      })
+    )
+    .catch(err => console.log(err));
 };

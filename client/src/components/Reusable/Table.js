@@ -21,10 +21,10 @@ const Table = () => {
             <td data-column="Twitter">@james</td>
             <td className="actions">
               <button>
-                <i class="fas fa-pencil-alt" />
+                <i className="fas fa-pencil-alt" />
               </button>
               <button>
-                <i class="fas fa-trash-alt" />
+                <i className="fas fa-trash-alt" />
               </button>
             </td>
           </tr>
@@ -35,10 +35,10 @@ const Table = () => {
             <td data-column="Twitter">@andornagy</td>
             <td className="actions">
               <button>
-                <i class="fas fa-pencil-alt" />
+                <i className="fas fa-pencil-alt" />
               </button>
               <button>
-                <i class="fas fa-trash-alt" />
+                <i className="fas fa-trash-alt" />
               </button>
             </td>
           </tr>
@@ -49,10 +49,10 @@ const Table = () => {
             <td data-column="Twitter">@tamas</td>
             <td className="actions">
               <button>
-                <i class="fas fa-pencil-alt" />
+                <i className="fas fa-pencil-alt" />
               </button>
               <button>
-                <i class="fas fa-trash-alt" />
+                <i className="fas fa-trash-alt" />
               </button>
             </td>
           </tr>
@@ -63,10 +63,10 @@ const Table = () => {
             <td data-column="Twitter">@zoli</td>
             <td className="actions">
               <button>
-                <i class="fas fa-pencil-alt" />
+                <i className="fas fa-pencil-alt" />
               </button>
               <button>
-                <i class="fas fa-trash-alt" />
+                <i className="fas fa-trash-alt" />
               </button>
             </td>
           </tr>
@@ -77,10 +77,10 @@ const Table = () => {
             <td data-column="Twitter">@szabi</td>
             <td className="actions">
               <button>
-                <i class="fas fa-pencil-alt" />
+                <i className="fas fa-pencil-alt" />
               </button>
               <button>
-                <i class="fas fa-trash-alt" />
+                <i className="fas fa-trash-alt" />
               </button>
             </td>
           </tr>

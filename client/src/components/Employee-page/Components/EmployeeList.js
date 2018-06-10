@@ -9,6 +9,7 @@ const EmployeeList = ({ employees }) => {
           key={employee.id}
           title={employee.title}
           body={employee.body}
+          id={employee.id}
         />
       ))}
     </div>

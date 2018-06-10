@@ -5,9 +5,10 @@ import NotFound from "../NotFound/NotFound";
 import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import EmployeeDashboard from "../Employee-page/Container/EmployeeDashboard";
-import AdminDashboard from "../Admin-page/AdminDashboard";
+import AdminDashboard from "../Admin-page/Container/AdminDashboard";
 import StandardLayout from "../Layout/StandardLayout";
 import HomeLayout from "../Layout/HomeLayout";
+import Feedback from "../Feedback-page/Container/Feedback";
 
 //This will pass layout prop to routes in order to render different layout for different pages
 const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
@@ -33,9 +34,16 @@ const Routes = () => {
         component={AdminDashboard}
       />
       <AppRoute
+        exact
         path="/review"
         layout={StandardLayout}
         component={EmployeeDashboard}
+      />
+      <AppRoute
+        exact
+        path="/review/:id"
+        layout={StandardLayout}
+        component={Feedback}
       />
       <AppRoute layout={StandardLayout} component={NotFound} />
     </Switch>

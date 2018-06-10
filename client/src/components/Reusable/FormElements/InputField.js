@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const InputField = ({ name, placeholder, value, type, onChange }) => {
+const InputField = ({ name, placeholder, value, type, onChange, label }) => {
   return (
     <div className="input-group">
-      <div className="input-group__label">
-        <label>{name}</label>
-      </div>
+      {label && (
+        <div className="input-group__label">
+          <label>{name}</label>
+        </div>
+      )}
       <input
         placeholder={placeholder}
         name={name}

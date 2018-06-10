@@ -36,7 +36,7 @@ export default (state = initialState, action) => {
         employees: state.employees.filter(
           employee => employee.id !== action.payload
         ),
-        loading: true
+        loading: false
       };
     default:
       return state;

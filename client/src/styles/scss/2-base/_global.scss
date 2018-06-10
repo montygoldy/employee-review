@@ -40,6 +40,11 @@ h6 {
   font-family: $primary-font;
 }
 
+h5 {
+  margin-bottom: 1.5rem;
+  font-family: $secondary-font;
+}
+
 h3.page-heading {
   padding-bottom: 1.5rem;
   margin-bottom: 4rem;
@@ -91,7 +96,9 @@ button {
 button:focus,
 button:active,
 input:active,
-input:focus {
+input:focus,
+textarea:focus,
+textarea:active {
   outline: none !important;
 }
 

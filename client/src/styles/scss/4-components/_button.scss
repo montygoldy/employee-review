@@ -20,7 +20,8 @@ a.button {
   }
 }
 
-.button--white {
+.button--white,
+a.button--white {
   font-size: 2rem !important;
   text-transform: uppercase;
   background: $color-white !important;
@@ -33,7 +34,8 @@ a.button {
   }
 }
 
-.button--dark {
+.button--dark,
+a.button--dark {
   @include gradientMain;
   padding: 1.2rem 2.6rem;
   border-radius: 10rem;
