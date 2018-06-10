@@ -175,7 +175,7 @@ h5 {
 
 h3.page-heading {
   padding-bottom: 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   position: relative; }
   h3.page-heading::after {
     position: absolute;
@@ -489,6 +489,20 @@ table {
     background-size: 24.8rem;
     animation: spin 1s infinite linear; }
 
+.styles_modal__gNwvD {
+  max-width: 60rem !important;
+  width: 70% !important; }
+
+.modal-popup {
+  padding: 3rem; }
+  .modal-popup input,
+  .modal-popup textarea {
+    width: 100% !important; }
+
+.closeButton,
+.closeIcon {
+  cursor: pointer !important; }
+
 section.employee-review {
   padding: 3rem 0; }
   section.employee-review .article-group {
@@ -536,17 +550,6 @@ section.employee-review {
   .dashboard .employees {
     display: flex;
     justify-content: space-between; }
-    .dashboard .employees__table {
-      flex: 0 0 70%; }
-    .dashboard .employees__add {
-      flex: 0 0 27%; }
-      .dashboard .employees__add form {
-        background: #fff;
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-        border-radius: 5px;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
 
 .homepage {
   height: 100vh; }
@@ -578,6 +581,12 @@ section.employee-review {
 
 .feedback-page {
   padding: 3rem 0; }
+  .feedback-page .heading-group {
+    position: relative; }
+    .feedback-page .heading-group .button {
+      position: absolute;
+      top: 0;
+      right: 0; }
   .feedback-page .wrapper {
     align-items: end !important; }
   .feedback-page section > .wrapper {
@@ -594,13 +603,13 @@ section.employee-review {
       .feedback-page .userDetails__info li:not(last-child) {
         margin-bottom: 1.5rem; }
       .feedback-page .userDetails__info li .title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-family: "Montserrat", sans-serif;
         font-weight: 300;
         margin-right: 1rem;
-        flex: 0 0 37%; }
+        flex: 0 0 34%; }
       .feedback-page .userDetails__info li .detail {
-        flex: 0 0 61%; }
+        flex: 0 0 64%; }
   .feedback-page section.feedback-form {
     flex: 0 0 64%; }
     .feedback-page section.feedback-form .rating {

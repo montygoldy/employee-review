@@ -8,8 +8,10 @@ const EmployeeList = ({ employees }) => {
         <EmployeeItem
           key={employee.id}
           title={employee.title}
-          body={employee.body}
-          id={employee.id}
+          name={employee.name}
+          image={employee.image}
+          funFact={employee.funFact}
+          employeeId={employee.employeeId}
         />
       ))}
     </div>

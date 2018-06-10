@@ -1,6 +1,7 @@
 {
   "employees": [{
       "id": 1,
+      "image": "http://placeholder.pics/svg/300x200/4db82c",
       "name": "John Doe",
       "title": "Senior Manager",
       "employeeId": "11223344",
@@ -10,6 +11,7 @@
     {
       "id": 2,
       "name": "Jane Doe",
+      "image": "http://placeholder.pics/svg/300x200/ff4040",
       "title": "VP of Engineering",
       "employeeId": "12345678",
       "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -18,6 +20,7 @@
     {
       "id": 3,
       "name": "Johny Depp",
+      "image": "http://placeholder.pics/svg/300x200/00ffab",
       "title": "Junior Developerr",
       "employeeId": "13579135",
       "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -26,6 +29,7 @@
     {
       "id": 4,
       "name": "Robert Downy",
+      "image": "http://placeholder.pics/svg/300x200/e3085d",
       "title": "Senior Developer",
       "employeeId": "11111111",
       "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -34,10 +38,20 @@
     {
       "id": 5,
       "name": "Tom Cruise",
+      "image": "http://placeholder.pics/svg/300x200/000000",
       "title": "Hiring Manager",
       "employeeId": "22222222",
       "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "dateOfJoining": "04/12/2013"
+    },
+    {
+      "id": 6,
+      "name": "Julius Caesar",
+      "image": "http://placeholder.pics/svg/300x200/fdfdfd",
+      "title": "Sales Executive",
+      "employeeId": "33333333",
+      "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "dateOfJoining": "04/12/2016"
     }
   ],
   "feedbacks": [{

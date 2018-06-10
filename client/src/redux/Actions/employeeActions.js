@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   GET_EMPLOYEES,
+  GET_EMPLOYEE,
   EMPLOYEES_LOADING,
   ADD_EMPLOYEE,
   DELETE_EMPLOYEE
@@ -18,7 +19,7 @@ export const addEmployee = employeeData => dispatch => {
 export const getEmployees = () => dispatch => {
   dispatch({ type: EMPLOYEES_LOADING });
   axios
-    .get("https://jsonplaceholder.typicode.com/posts")
+    .get("http://localhost:3004/employees")
     .then(response =>
       dispatch({
         type: GET_EMPLOYEES,
@@ -26,4 +27,25 @@ export const getEmployees = () => dispatch => {
       })
     )
     .catch(err => console.log(err));
+};
+
+//Get Employee details
+export const getEmployeeDetails = employeeId => dispatch => {
+  dispatch({ type: EMPLOYEES_LOADING });
+  axios
+    .get(`http://localhost:3004/employees?employeeId=${employeeId}`)
+    .then(response =>
+      dispatch({
+        type: GET_EMPLOYEE,
+        payload: response.data[0]
+      })
+    );
+};
+
+//Delete Employee
+export const deleteEmployee = employeeId => dispatch => {
+  dispatch({
+    type: DELETE_EMPLOYEE,
+    payload: employeeId
+  });
 };

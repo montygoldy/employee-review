@@ -2,6 +2,7 @@ import {
   GET_EMPLOYEES,
   EMPLOYEES_LOADING,
   ADD_EMPLOYEE,
+  GET_EMPLOYEE,
   DELETE_EMPLOYEE
 } from "../Actions/types";
 
@@ -22,6 +23,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         employees: action.payload,
+        loading: false
+      };
+    case GET_EMPLOYEE:
+      return {
+        ...state,
+        employee: action.payload,
         loading: false
       };
     case ADD_EMPLOYEE:

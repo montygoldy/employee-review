@@ -1,44 +1,27 @@
 import React, { Component } from "react";
 import Table from "../../Reusable/Table";
 import { connect } from "react-redux";
-import InputField from "../../Reusable/FormElements/InputField";
 import {
   getEmployees,
   addEmployee
 } from "../../../redux/Actions/employeeActions";
-
+import AddEmployeeModal from "../Components/AddEmployeeModal";
+import Modal from "react-responsive-modal";
+import EmployeeTable from "../Components/EmployeeTable";
 class AdminDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      title: "",
-      info: "",
-      image: ""
+      open: false
     };
   }
 
-  handleChange = e => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
+  toggleModal = () => {
+    this.setState({ open: !this.state.open });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { name, title, info } = this.state;
-    const employeeData = {
-      name,
-      title,
-      info
-    };
+  addNewEmployee = employeeData => {
     this.props.addEmployee(employeeData);
-    this.setState({
-      name: "",
-      title: "",
-      info: ""
-    });
   };
 
   componentDidMount() {
@@ -77,46 +60,17 @@ class AdminDashboard extends Component {
           <section className="employees">
             <div className="employees__table">
               <h5>Employees Table</h5>
-              <Table />
-            </div>
-            <div className="employees__add">
-              <h5>Add Employee</h5>
-              <form>
-                <InputField
-                  name="name"
-                  placeholder="min. 6 characters"
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                />
-                <InputField
-                  name="title"
-                  placeholder="title"
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.handleChange}
-                />
-                <InputField
-                  name="info"
-                  placeholder="Info"
-                  type="text"
-                  value={this.state.info}
-                  onChange={this.handleChange}
-                />
-                <InputField
-                  name="image"
-                  placeholder="Image"
-                  type="text"
-                  value={this.state.image}
-                  onChange={this.handleChange}
-                />
-                <button
-                  className="button button--dark"
-                  onClick={this.handleSubmit}
-                >
-                  <i className="fas fa-user-plus" />Add Employee
-                </button>
-              </form>
+              <button
+                className="button button--white"
+                onClick={this.toggleModal}
+              >
+                <i className="fas fa-plus-circle" /> Add New Employee
+              </button>
+              <Modal open={this.state.open} onClose={this.toggleModal} center>
+                <AddEmployeeModal addNewEmployee={this.addNewEmployee} />
+              </Modal>
+
+              <EmployeeTable employees={employees} />
             </div>
           </section>
           <section className="feedback">

@@ -1,26 +1,26 @@
 import React from "react";
 
-const EmployeeInfo = () => {
+const EmployeeInfo = ({ employee }) => {
   return (
     <section className="userDetails">
       <h5>Employee Info</h5>
       <div className="wrapper">
         <div className="userDetails__image">
-          <img src="http://placeholder.pics/svg/300x200" alt="employee img" />
+          <img src={employee.image} alt={`${employee.name} img`} />
         </div>
         <div className="userDetails__info">
           <ul>
             <li>
               <div className="title">Employee Name:</div>
-              <div className="detail">John Doe</div>
+              <div className="detail">{employee.name}</div>
             </li>
             <li>
               <div className="title">Employee Id:</div>
-              <div className="detail">dc2fc2f22ce</div>
+              <div className="detail">{employee.employeeId}</div>
             </li>
             <li>
               <div className="title">Designation:</div>
-              <div className="detail">Manager</div>
+              <div className="detail">{employee.title}</div>
             </li>
             <li>
               <div className="title">Review period</div>
@@ -28,14 +28,11 @@ const EmployeeInfo = () => {
             </li>
             <li>
               <div className="title">Date of joining:</div>
-              <div className="detail">26/10/2013</div>
+              <div className="detail">{employee.dateOfJoining}</div>
             </li>
             <li>
               <div className="title">Fun Fact:</div>
-              <div className="detail">
-                This is a test paragraph in order to check the line height and
-                spacing
-              </div>
+              <div className="detail">{employee.funFact}</div>
             </li>
           </ul>
         </div>

@@ -44,19 +44,5 @@
   .employees {
     display: flex;
     justify-content: space-between;
-    &__table {
-      flex: 0 0 70%;
-    }
-    &__add {
-      flex: 0 0 27%;
-      form {
-        background: $color-white;
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-        border-radius: 5px;
-        box-shadow: 0 0 6px rgba(0, 0, 0, .1);
-      }
-    }
   }
 }
