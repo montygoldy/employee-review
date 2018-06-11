@@ -320,6 +320,12 @@ footer {
     width: 50%;
     height: 10rem;
     border-radius: 5px; }
+    @media only screen and (max-width: 56.25em) {
+      .auth__head {
+        width: 70%; } }
+    @media only screen and (max-width: 37.5em) {
+      .auth__head {
+        width: 100%; } }
     .auth__head h3 {
       font-family: "Fjalla One", sans-serif !important;
       font-weight: 500;
@@ -335,6 +341,12 @@ footer {
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); }
+    @media only screen and (max-width: 56.25em) {
+      .auth__form {
+        width: 65%; } }
+    @media only screen and (max-width: 37.5em) {
+      .auth__form {
+        width: 95%; } }
 
 .input-group {
   width: 100%;
@@ -428,6 +440,12 @@ a.button--dark {
   border-radius: 5px;
   overflow: hidden;
   background: #fff; }
+  @media only screen and (max-width: 56.25em) {
+    .card {
+      width: 48%; } }
+  @media only screen and (max-width: 37.5em) {
+    .card {
+      width: 100%; } }
   .card__head img {
     display: block;
     width: 100%;
@@ -473,6 +491,78 @@ table {
   table button {
     font-size: 1.5rem; }
 
+@media only screen and (max-width: 56.25em) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block; }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
+
+  tr:nth-child(odd) {
+    background: #fff; }
+
+  tr {
+    padding: 2rem 0 3rem 0; }
+
+  td {
+    /* Behave  like a "row" */
+    position: relative;
+    padding-left: 30% !important;
+    font-weight: 500;
+    border: none !important; }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 10px;
+    left: 10px;
+    width: 30%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 300; }
+
+  .employee_heading td:nth-of-type(1):before {
+    content: "Name"; }
+
+  .employee_heading td:nth-of-type(2):before {
+    content: "Employee Id"; }
+
+  .employee_heading td:nth-of-type(3):before {
+    content: "Job Title"; }
+
+  .employee_heading td:nth-of-type(4):before {
+    content: "Joinign Date"; }
+
+  .employee_heading td:nth-of-type(5):before {
+    content: "Fun Fact"; }
+
+  .feedback_heading td:nth-of-type(1):before {
+    content: "Employee Id"; }
+
+  .feedback_heading td:nth-of-type(2):before {
+    content: "Pro"; }
+
+  .feedback_heading td:nth-of-type(3):before {
+    content: "Con"; }
+
+  .feedback_heading td:nth-of-type(4):before {
+    content: "Comments"; }
+
+  .feedback_heading td:nth-of-type(5):before {
+    content: "Rating"; } }
+@media only screen and (max-width: 37.5em) {
+  td {
+    padding-left: 40% !important; } }
 .loader {
   position: absolute;
   top: 50%;
@@ -521,37 +611,54 @@ section.employee-review {
   padding: 3rem; }
   .dashboard section {
     margin: 3rem 0; }
-  .dashboard .top-info__info-box {
-    background: #fff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 30%;
-    height: 11rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; }
-    .dashboard .top-info__info-box i {
-      flex: 0 0 50%;
-      background: #39ACFC;
-      align-self: stretch;
+  .dashboard .top-info {
+    flex-wrap: wrap; }
+    .dashboard .top-info__info-box {
+      background: #fff;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      width: 30%;
+      height: 11rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
-      color: #fff; }
-    .dashboard .top-info__info-box .countWrapper {
-      display: flex;
-      flex-direction: column;
-      height: 100%; }
-      .dashboard .top-info__info-box .countWrapper .countInfo {
-        font-size: 1.2rem;
-        padding: 1rem;
-        font-weight: 300; }
-      .dashboard .top-info__info-box .countWrapper .number {
-        text-align: center;
-        font-size: 3.5rem;
-        font-family: "Fjalla One", sans-serif; }
+      overflow: hidden; }
+      @media only screen and (max-width: 56.25em) {
+        .dashboard .top-info__info-box {
+          width: 48%; } }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard .top-info__info-box {
+          width: 100%; } }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard .top-info__info-box:first-child {
+          margin-bottom: 3rem; } }
+      @media only screen and (max-width: 56.25em) {
+        .dashboard .top-info__info-box:last-child {
+          margin-top: 3rem; } }
+      .dashboard .top-info__info-box i {
+        flex: 0 0 50%;
+        background: #39ACFC;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        color: #fff; }
+      .dashboard .top-info__info-box .countWrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%; }
+        @media only screen and (max-width: 37.5em) {
+          .dashboard .top-info__info-box .countWrapper {
+            flex: 0 0 50%; } }
+        .dashboard .top-info__info-box .countWrapper .countInfo {
+          font-size: 1.2rem;
+          padding: 1rem;
+          font-weight: 300; }
+        .dashboard .top-info__info-box .countWrapper .number {
+          text-align: center;
+          font-size: 3.5rem;
+          font-family: "Fjalla One", sans-serif; }
   .dashboard .employees,
   .dashboard .feedback {
     display: flex;
@@ -624,15 +731,42 @@ section.employee-review {
       right: 0; }
   .feedback-page .wrapper {
     align-items: end !important; }
+    @media only screen and (max-width: 56.25em) {
+      .feedback-page .wrapper {
+        flex-direction: column; } }
+  @media only screen and (max-width: 56.25em) {
+    .feedback-page section {
+      width: 100%; } }
   .feedback-page section > .wrapper {
     background: #fff;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 2rem; }
   .feedback-page .userDetails {
-    flex: 0 0 30%; }
+    margin-bottom: 3rem;
+    flex: 0 0 35%; }
+    @media only screen and (max-width: 56.25em) {
+      .feedback-page .userDetails .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; } }
+    @media only screen and (max-width: 37.5em) {
+      .feedback-page .userDetails .wrapper {
+        flex-direction: column; } }
     .feedback-page .userDetails__image {
       margin-bottom: 2rem; }
+      @media only screen and (max-width: 56.25em) {
+        .feedback-page .userDetails__image {
+          width: 45%; } }
+      @media only screen and (max-width: 37.5em) {
+        .feedback-page .userDetails__image {
+          width: 100%; } }
+      .feedback-page .userDetails__image img {
+        width: 100%;
+        height: 100%; }
+    @media only screen and (max-width: 56.25em) {
+      .feedback-page .userDetails__info {
+        flex: 0 0 50%; } }
     .feedback-page .userDetails__info li {
       display: flex; }
       .feedback-page .userDetails__info li:not(last-child) {
@@ -646,7 +780,7 @@ section.employee-review {
       .feedback-page .userDetails__info li .detail {
         flex: 0 0 64%; }
   .feedback-page section.feedback-form {
-    flex: 0 0 64%; }
+    flex: 0 0 62%; }
     .feedback-page section.feedback-form .rating {
       margin: 2rem 0; }
     .feedback-page section.feedback-form .input-group {

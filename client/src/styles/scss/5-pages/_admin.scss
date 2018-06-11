@@ -4,7 +4,14 @@
     margin: 3rem 0;
   }
   .top-info {
+    flex-wrap: wrap;
     &__info-box {
+      @include respond(tab-port) {
+        width: 48%;
+      }
+      @include respond(phone) {
+        width: 100%;
+      }
       background: $color-white;
       box-shadow: 0 0 4px rgba(0, 0, 0, .1);
       border-radius: 5px;
@@ -14,6 +21,16 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      &:first-child {
+        @include respond(phone) {
+          margin-bottom: 3rem;
+        }
+      }
+      &:last-child {
+        @include respond(tab-port) {
+          margin-top: 3rem;
+        }
+      }
       i {
         flex: 0 0 50%;
         background: $primary-color;
@@ -25,6 +42,9 @@
         color: $color-white;
       }
       .countWrapper {
+        @include respond(phone) {
+          flex: 0 0 50%;
+        }
         display: flex;
         flex-direction: column;
         height: 100%;

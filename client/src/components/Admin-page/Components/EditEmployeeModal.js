@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InputField from "../../Reusable/FormElements/InputField";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
+import PropTypes from "prop-types";
 
 class EditEmployeeModal extends Component {
   constructor(props) {

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const HeadInfo = ({ employees, feedbacks }) => {
   return (
@@ -26,6 +27,11 @@ const HeadInfo = ({ employees, feedbacks }) => {
       </div>
     </section>
   );
+};
+
+HeadInfo.propTypes = {
+  employees: PropTypes.array.isRequired,
+  feedbacks: PropTypes.array.isRequired
 };
 
 export default HeadInfo;

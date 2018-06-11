@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import PropTypes from "prop-types";
 
 const StandardLayout = ({ children }) => {
   return (
@@ -10,6 +11,10 @@ const StandardLayout = ({ children }) => {
       <Footer />
     </React.Fragment>
   );
+};
+
+StandardLayout.propTypes = {
+  children: PropTypes.object
 };
 
 export default StandardLayout;

@@ -24,3 +24,81 @@ table {
     font-size: 1.5rem;
   }
 }
+
+@include respond(tab-port) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr:nth-child(odd) {
+    background: $color-white;
+  }
+  tr {
+    padding: 2rem 0 3rem 0;
+  }
+  td {
+    /* Behave  like a "row" */
+    position: relative;
+    padding-left: 30% !important;
+    font-weight: 500;
+    border: none !important;
+  }
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 10px;
+    left: 10px;
+    width: 30%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 300;
+  } //Employee table label
+  .employee_heading td:nth-of-type(1):before {
+    content: "Name";
+  }
+  .employee_heading td:nth-of-type(2):before {
+    content: "Employee Id";
+  }
+  .employee_heading td:nth-of-type(3):before {
+    content: "Job Title";
+  }
+  .employee_heading td:nth-of-type(4):before {
+    content: "Joinign Date";
+  }
+  .employee_heading td:nth-of-type(5):before {
+    content: "Fun Fact";
+  } //Feedback table label
+  .feedback_heading td:nth-of-type(1):before {
+    content: "Employee Id";
+  }
+  .feedback_heading td:nth-of-type(2):before {
+    content: "Pro";
+  }
+  .feedback_heading td:nth-of-type(3):before {
+    content: "Con";
+  }
+  .feedback_heading td:nth-of-type(4):before {
+    content: "Comments";
+  }
+  .feedback_heading td:nth-of-type(5):before {
+    content: "Rating";
+  }
+}
+
+@include respond(phone) {
+  td {
+    padding-left: 40% !important;
+  }
+}

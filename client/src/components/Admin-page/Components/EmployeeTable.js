@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EditEmployeeModal from "../Components/EditEmployeeModal";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class EmployeeTable extends Component {
   state = {
@@ -19,7 +20,7 @@ class EmployeeTable extends Component {
   };
   render() {
     const employeeInfo = this.props.employees.map(employee => (
-      <tr key={employee.employeeId}>
+      <tr key={employee.employeeId} className="employee_heading">
         <td>{employee.name}</td>
         <td>{employee.employeeId}</td>
         <td>{employee.title}</td>
@@ -67,5 +68,10 @@ class EmployeeTable extends Component {
     );
   }
 }
+
+EmployeeTable.propTypes = {
+  employees: PropTypes.array.isRequired,
+  deleteEmployee: PropTypes.func.isRequired
+};
 
 export default EmployeeTable;

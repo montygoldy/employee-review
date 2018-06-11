@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const EmployeeItem = ({ title, name, image, funFact, employeeId }) => {
   //Reducing length of the employee detail
@@ -22,6 +23,14 @@ const EmployeeItem = ({ title, name, image, funFact, employeeId }) => {
       </div>
     </article>
   );
+};
+
+EmployeeItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  funFact: PropTypes.string.isRequired,
+  employeeId: PropTypes.string.isRequired
 };
 
 export default EmployeeItem;

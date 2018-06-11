@@ -11,6 +11,7 @@ import Modal from "react-responsive-modal";
 import EmployeeTable from "../Components/EmployeeTable";
 import HeadInfo from "../Components/HeadInfo";
 import FeedbackTable from "../Components/FeedbackTable";
+import PropTypes from "prop-types";
 
 class AdminDashboard extends Component {
   constructor(props) {
@@ -87,6 +88,15 @@ class AdminDashboard extends Component {
     );
   }
 }
+
+AdminDashboard.propTypes = {
+  employeeList: PropTypes.object.isRequired,
+  feedbackList: PropTypes.object.isRequired,
+  addEmployee: PropTypes.func.isRequired,
+  deleteEmployee: PropTypes.func.isRequired,
+  getEmployees: PropTypes.func.isRequired,
+  getFeedbacks: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
   employeeList: state.employee,

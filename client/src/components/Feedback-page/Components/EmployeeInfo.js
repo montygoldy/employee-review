@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const EmployeeInfo = ({ employee }) => {
   return (
@@ -39,6 +40,10 @@ const EmployeeInfo = ({ employee }) => {
       </div>
     </section>
   );
+};
+
+EmployeeInfo.propTypes = {
+  employee: PropTypes.object.isRequired
 };
 
 export default EmployeeInfo;

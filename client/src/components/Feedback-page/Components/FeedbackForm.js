@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
 import StarRatingComponent from "react-star-rating-component";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class FeedbackForm extends Component {
   constructor(props) {
@@ -21,11 +22,11 @@ class FeedbackForm extends Component {
     });
   };
 
-  // onStarClick = nextValue => {
-  //   this.setState({
-  //     rating: nextValue
-  //   });
-  // };
+  onStarClick = nextValue => {
+    this.setState({
+      rating: nextValue
+    });
+  };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -84,5 +85,9 @@ class FeedbackForm extends Component {
     );
   }
 }
+
+FeedbackForm.propTypes = {
+  addFeedback: PropTypes.func.isRequired
+};
 
 export default withRouter(FeedbackForm);

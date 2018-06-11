@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class FeedbackTable extends Component {
   render() {
     const feedbackInfo = this.props.feedbacks.map(feedback => (
-      <tr key={feedback.id}>
+      <tr key={feedback.id} className="feedback_heading">
         <td>{feedback.employeeId}</td>
         <td>{feedback.pro}</td>
         <td>{feedback.con}</td>
@@ -40,5 +41,9 @@ class FeedbackTable extends Component {
     );
   }
 }
+
+FeedbackTable.propTypes = {
+  feedbacks: PropTypes.array.isRequired
+};
 
 export default FeedbackTable;

@@ -5,6 +5,7 @@ import FeedbackForm from "../Components/FeedbackForm";
 import { connect } from "react-redux";
 import { getEmployeeDetails } from "../../../redux/Actions/employeeActions";
 import { addFeedback } from "../../../redux/Actions/feedbackActions";
+import PropTypes from "prop-types";
 
 class Feedback extends Component {
   addFeedback = (feedbackData, history) => {
@@ -35,6 +36,13 @@ class Feedback extends Component {
     );
   }
 }
+
+Feedback.propTypes = {
+  feedbackList: PropTypes.object.isRequired,
+  employeeList: PropTypes.object.isRequired,
+  addFeedback: PropTypes.func.isRequired,
+  getEmployeeDetails: PropTypes.func.isRequired
+};
 
 const mapStatetoProps = state => ({
   feedbackList: state.feedback,

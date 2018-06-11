@@ -1,5 +1,6 @@
 import React from "react";
 import EmployeeItem from "./EmployeeItem";
+import PropTypes from "prop-types";
 
 const EmployeeList = ({ employees }) => {
   return (
@@ -16,6 +17,10 @@ const EmployeeList = ({ employees }) => {
       ))}
     </div>
   );
+};
+
+EmployeeList.propTypes = {
+  employees: PropTypes.array.isRequired
 };
 
 export default EmployeeList;

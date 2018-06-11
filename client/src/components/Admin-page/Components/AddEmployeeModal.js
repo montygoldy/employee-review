@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InputField from "../../Reusable/FormElements/InputField";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
+import PropTypes from "prop-types";
 
 class AddEmployeeModal extends Component {
   constructor(props) {
@@ -113,5 +114,9 @@ class AddEmployeeModal extends Component {
     );
   }
 }
+
+AddEmployeeModal.propTypes = {
+  addNewEmployee: PropTypes.func.isRequired
+};
 
 export default AddEmployeeModal;
