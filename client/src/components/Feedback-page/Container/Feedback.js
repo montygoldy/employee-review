@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import FeedbackForm from "../Components/FeedbackForm";
 import { connect } from "react-redux";
 import { getEmployeeDetails } from "../../../redux/Actions/employeeActions";
+import { addFeedback } from "../../../redux/Actions/feedbackActions";
+
 class Feedback extends Component {
+  addFeedback = (feedbackData, history) => {
+    this.props.addFeedback(feedbackData, history);
+  };
+
   componentDidMount = () => {
     this.props.getEmployeeDetails(this.props.match.params.id);
   };
@@ -22,7 +28,7 @@ class Feedback extends Component {
           </div>
           <div className="wrapper flexFit">
             <EmployeeInfo employee={employee} />
-            <FeedbackForm />
+            <FeedbackForm addFeedback={this.addFeedback} />
           </div>
         </div>
       </div>
@@ -31,11 +37,11 @@ class Feedback extends Component {
 }
 
 const mapStatetoProps = state => ({
-  feedbacks: state.feedback,
+  feedbackList: state.feedback,
   employeeList: state.employee
 });
 
 export default connect(
   mapStatetoProps,
-  { getEmployeeDetails }
+  { getEmployeeDetails, addFeedback }
 )(Feedback);

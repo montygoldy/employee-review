@@ -8,6 +8,9 @@ table {
     border: 1px solid rgba($text-color-dark, .1);
     text-align: left;
   }
+  td {
+    min-width: 10rem;
+  }
   th {
     background: $primary-color;
     color: $color-white;

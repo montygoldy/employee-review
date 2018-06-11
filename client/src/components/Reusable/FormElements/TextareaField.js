@@ -15,6 +15,7 @@ const TextareaField = ({ name, placeholder, value, onChange, label }) => {
         value={value}
         onChange={onChange}
         className="input-group__textarea"
+        required="required"
       >
         {" "}
       </textarea>

@@ -14,47 +14,54 @@ class FeedbackForm extends Component {
     };
   }
 
-  onChange = e => {
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
     });
   };
 
-  onStarClick = nextValue => {
-    this.setState({
-      rating: nextValue
-    });
-  };
+  // onStarClick = nextValue => {
+  //   this.setState({
+  //     rating: nextValue
+  //   });
+  // };
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.history.push("/review");
+    const { pro, con, comments, rating } = this.state;
+    const feedbackData = {
+      pro,
+      con,
+      comments,
+      rating
+    };
+    this.props.addFeedback(feedbackData, this.props.history);
     this.setState({ pro: "", con: "", comments: "", rating: "" });
   };
 
   render() {
     return (
       <section className="feedback-form">
-        <h5>Feedback form</h5>
-        <form action="" className="wrapper">
+        <h4 className="semi-heading">Feedback form</h4>
+        <form className="wrapper">
           <TextareaField
             name="pro"
-            placeholder="Positive feedback"
+            placeholder="Positive Points"
             value={this.state.pro}
-            onChange={this.onChange}
+            onChange={this.handleChange}
           />
           <TextareaField
             name="con"
-            placeholder="Negative feedback"
+            placeholder="Negative Points"
             value={this.state.con}
-            onChange={this.onChange}
+            onChange={this.handleChange}
           />
           <TextareaField
             name="comments"
             placeholder="Anything you would like to add"
             value={this.state.comments}
-            onChange={this.onChange}
+            onChange={this.handleChange}
           />
           <div className="input-group rating">
             <label>Rating</label>

@@ -3,7 +3,7 @@ import React from "react";
 const EmployeeInfo = ({ employee }) => {
   return (
     <section className="userDetails">
-      <h5>Employee Info</h5>
+      <h4 className="semi-heading">Employee Info</h4>
       <div className="wrapper">
         <div className="userDetails__image">
           <img src={employee.image} alt={`${employee.name} img`} />

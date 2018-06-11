@@ -52,59 +52,81 @@
       "employeeId": "33333333",
       "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "dateOfJoining": "04/12/2016"
+    },
+    {
+      "name": "Joshua Fluke",
+      "title": "Designer",
+      "funFact": "This is my test app to test the delete functionality of the app",
+      "image": "http://placeholder.pics/svg/300x200/333333",
+      "employeeId": "12341234",
+      "dateOfJoining": "12/10/2016",
+      "id": 7
     }
   ],
   "feedbacks": [{
       "id": 1,
-      "employeeId": "11223344",
+      "feedbackId": "8928627",
+      "employeeId": "12341234",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
       "rating": 7
     },
     {
       "id": 2,
+      "feedbackId": "2323456",
       "employeeId": "11223344",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
       "rating": 2
     },
     {
       "id": 3,
-      "employeeId": "11223344",
+      "feedbackId": "232323",
+      "employeeId": "22222222",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
       "rating": 4
     },
     {
       "id": 4,
       "employeeId": "11223344",
+      "feedbackId": "1231231",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
       "rating": 9
+    },
+    {
+      "pro": "wcwcwcwc",
+      "con": "wcwcwcwcw",
+      "comments": "wcddwvvwvwvwv",
+      "rating": 8,
+      "id": 5
     }
   ],
   "users": [{
-    "name": "admin",
-    "email": "admin@gmail.com",
-    "password": "admin",
-    "isAdmin": true,
-    "userId": 1
-  }, {
-    "name": "jane",
-    "email": "jane@gmail.com",
-    "password": "jane",
-    "isAdmin": false,
-    "userId": 2
-  }, {
-    "name": "jonh",
-    "email": "jonh@gmail.com",
-    "password": "john",
-    "isAdmin": false,
-    "userId": 3
-  }]
-
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "isAdmin": true,
+      "userId": 1
+    },
+    {
+      "name": "jane",
+      "email": "jane@gmail.com",
+      "password": "jane",
+      "isAdmin": false,
+      "userId": 2
+    },
+    {
+      "name": "jonh",
+      "email": "jonh@gmail.com",
+      "password": "john",
+      "isAdmin": false,
+      "userId": 3
+    }
+  ]
 }

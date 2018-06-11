@@ -9,7 +9,7 @@
       box-shadow: 0 0 4px rgba(0, 0, 0, .1);
       border-radius: 5px;
       width: 30%;
-      height: 10rem;
+      height: 11rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -41,8 +41,40 @@
       }
     }
   }
-  .employees {
+  .employees,
+  .feedback {
     display: flex;
     justify-content: space-between;
+    &__table {
+      .add-employee {
+        font-size: 1.4rem !important;
+        margin-bottom: 1rem;
+      }
+      td.actions {
+        text-align: center;
+        position: relative;
+        .group {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        a {
+          color: $text-color-dark;
+          margin-right: 1rem;
+        }
+        button {
+          cursor: pointer;
+          &.edit {
+            color: green;
+            margin-right: 1rem;
+          }
+          &:last-child {
+            color: tomato;
+          }
+        }
+      }
+    }
   }
 }

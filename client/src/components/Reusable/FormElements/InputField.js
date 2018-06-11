@@ -16,6 +16,7 @@ const InputField = ({ name, placeholder, value, type, onChange, label }) => {
         value={value}
         onChange={onChange}
         className="input-group__input"
+        required="required"
       />
     </div>
   );

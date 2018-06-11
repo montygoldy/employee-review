@@ -22,12 +22,6 @@ class Header extends Component {
     const authLinks = (
       <ul className="flexFit">
         <li className="header__nav-item">
-          <Link className="header__nav-link button" to="/register">
-            <i className="fas fa-user-plus"> </i>
-            Sign Up
-          </Link>
-        </li>
-        <li className="header__nav-item">
           <Link className="header__nav-link button" to="/login">
             <i className="fas fa-sign-in-alt"> </i>
             Login

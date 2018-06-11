@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import Landing from "../Landing-page/Landing";
 import NotFound from "../NotFound/NotFound";
 import Login from "../Authentication/Login";
-import Register from "../Authentication/Register";
 import EmployeeDashboard from "../Employee-page/Container/EmployeeDashboard";
 import AdminDashboard from "../Admin-page/Container/AdminDashboard";
 import StandardLayout from "../Layout/StandardLayout";
@@ -26,7 +25,6 @@ const Routes = () => {
   return (
     <Switch>
       <AppRoute exact path="/" layout={HomeLayout} component={Landing} />
-      <AppRoute path="/register" layout={StandardLayout} component={Register} />
       <AppRoute path="/login" layout={StandardLayout} component={Login} />
       <AppRoute
         path="/dashboard"

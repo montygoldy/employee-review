@@ -41,7 +41,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         employees: state.employees.filter(
-          employee => employee.id !== action.payload
+          employee => employee.employeeId !== action.payload
         ),
         loading: false
       };

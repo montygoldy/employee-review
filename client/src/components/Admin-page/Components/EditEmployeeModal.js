@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import InputField from "../../Reusable/FormElements/InputField";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
 
-class AddEmployeeModal extends Component {
+class EditEmployeeModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,37 +24,21 @@ class AddEmployeeModal extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const {
-      name,
-      title,
-      funFact,
-      image,
-      employeeId,
-      dateOfJoining
-    } = this.state;
-    const employeeData = {
-      name,
-      title,
-      funFact,
-      image,
-      employeeId,
-      dateOfJoining
-    };
-    this.props.addNewEmployee(employeeData);
-    this.setState({
-      name: "",
-      title: "",
-      funFact: "",
-      image: "",
-      employeeId: "",
-      dateOfJoining: ""
-    });
+    // const {
+    //   name,
+    //   title,
+    //   funFact,
+    //   image,
+    //   employeeId,
+    //   dateOfJoining
+    // } = this.state;
   };
 
   render() {
     return (
       <div className="modal-popup">
-        <h4 className="semi-heading">Add Employee</h4>
+        <h4 className="semi-heading">Edit Employee</h4>
+        {this.props.employee}
         <form>
           <InputField
             name="name"
@@ -105,7 +89,7 @@ class AddEmployeeModal extends Component {
           />
           <div className="flexCenter">
             <button className="button button--dark" onClick={this.handleSubmit}>
-              <i className="fas fa-user-plus" />Add Employee
+              <i className="fas fa-user-plus" />Edit Employee
             </button>
           </div>
         </form>
@@ -114,4 +98,4 @@ class AddEmployeeModal extends Component {
   }
 }
 
-export default AddEmployeeModal;
+export default EditEmployeeModal;

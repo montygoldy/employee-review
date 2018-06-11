@@ -9,10 +9,19 @@ import {
 
 //Add Employee
 export const addEmployee = employeeData => dispatch => {
-  dispatch({
-    type: ADD_EMPLOYEE,
-    payload: employeeData
-  });
+  axios
+    .post(
+      "http://localhost:3004/employees",
+      employeeData, //data
+      { headers: { "Content-Type": "application/json" } } //config
+    )
+    .then(response =>
+      dispatch({
+        type: ADD_EMPLOYEE,
+        payload: response.data
+      })
+    )
+    .catch(err => console.log(err));
 };
 
 //Get Employees
@@ -44,8 +53,15 @@ export const getEmployeeDetails = employeeId => dispatch => {
 
 //Delete Employee
 export const deleteEmployee = employeeId => dispatch => {
-  dispatch({
-    type: DELETE_EMPLOYEE,
-    payload: employeeId
-  });
+  axios
+    .delete(`http://localhost:3004/employees?employeeId=${employeeId}`, {
+      headers: { "Content-Type": "application/json" }
+    })
+    .then(
+      dispatch({
+        type: DELETE_EMPLOYEE,
+        payload: employeeId
+      })
+    )
+    .catch(err => console.log(err));
 };
