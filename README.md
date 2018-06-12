@@ -40,4 +40,22 @@ This is a test submission for frontend developer position at paytm labs. It is a
 
 ## Screenshots
 
-![](name-of-giphy.gif)
+### Home Page
+
+!["Screen shot for Home page"](https://github.com/montygoldy/employee-review/blob/master/gifs/home.gif?raw=true)
+
+### Review Page
+
+!["Screen shot for Home page"](https://github.com/montygoldy/employee-review/blob/master/gifs/review.gif?raw=true)
+
+### Feedback page
+
+!["Screen shot for Home page"](https://github.com/montygoldy/employee-review/blob/master/gifs/feedback.gif?raw=true)
+
+### Admin dashboard and add employee form
+
+!["Screen shot for Home page"](https://github.com/montygoldy/employee-review/blob/master/gifs/add_employee.gif?raw=true)
+
+### Employee delete and edit feature
+
+!["Screen shot for Home page"](https://github.com/montygoldy/employee-review/blob/master/gifs/delete_edit.gif?raw=true)
