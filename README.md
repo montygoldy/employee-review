@@ -26,10 +26,11 @@ This is a test submission for frontend developer position at paytm labs. It is a
 ### Installing
 
 1.  Clone the repository.
-2.  "Cd" inside the client folder.
-3.  Then install all the dependencies by typing "npm install" in your terminal.
-4.  Then type "npm start" in your terminal to run the server.
-5.  In a new terminal tab type "npm run json-server" to run API.
+2.  "cd" inside the project folder.
+3.  "cd" inside the client folder.
+4.  Then install all the dependencies by typing "npm install" in your terminal.
+5.  Then type "npm start" in your terminal to run the server.
+6.  In a new terminal tab type "npm run json-server" to run API.
 
 ## Available Routes
 
