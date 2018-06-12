@@ -16,3 +16,4 @@ export const UPDATE_FEEDBACK = "UPDATE_FEEDBACK";
 
 //User Constants
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const GET_USERS = "GET_USERS";

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const EmployeeItem = ({ title, name, image, funFact, employeeId }) => {
-  //Reducing length of the employee detail
+  //Reducing length of the employee detail to 60 characters
   const maxLength = 60;
   const shortFunFact = funFact.substring(0, maxLength);
   return (

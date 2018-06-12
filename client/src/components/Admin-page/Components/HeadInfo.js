@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const HeadInfo = ({ employees, feedbacks }) => {
+const HeadInfo = ({ employees, feedbacks, users }) => {
   return (
     <section className="top-info flexFit">
       <div className="top-info__info-box">
@@ -22,7 +22,7 @@ const HeadInfo = ({ employees, feedbacks }) => {
         <i className="fas fa-users" />
         <div className="countWrapper">
           <span className="countInfo">Total number of Users</span>
-          <span className="number">10</span>
+          <span className="number">{users.length}</span>
         </div>
       </div>
     </section>
@@ -31,7 +31,8 @@ const HeadInfo = ({ employees, feedbacks }) => {
 
 HeadInfo.propTypes = {
   employees: PropTypes.array.isRequired,
-  feedbacks: PropTypes.array.isRequired
+  feedbacks: PropTypes.array.isRequired,
+  users: PropTypes.array.isRequired
 };
 
 export default HeadInfo;

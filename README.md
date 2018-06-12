@@ -38,6 +38,13 @@ This is a test submission for frontend developer position at paytm labs. It is a
 3.  http://localhost:3000/review -- employee review page
 4.  http://localhost:3000/dashboard -- admin dashboard
 
+## Folder Structure
+
+1.  components -- contains all react component.
+2.  Redux -- contains reducers, actions and store.
+3.  styles -- contains all the sass styling which is compiled into css.
+4.  db.json -- json-server uses this file to do all api requests.
+
 ## Screenshots
 
 ### Home Page

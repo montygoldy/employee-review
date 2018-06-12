@@ -8,6 +8,7 @@ import { addFeedback } from "../../../redux/Actions/feedbackActions";
 import PropTypes from "prop-types";
 
 class Feedback extends Component {
+  //Dispatching action add new feedback
   addFeedback = (feedbackData, history) => {
     this.props.addFeedback(feedbackData, history);
   };

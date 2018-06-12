@@ -49,6 +49,7 @@ class EditEmployeeModal extends Component {
     this.props.onClose();
   };
 
+  //Updating the state before mounting with user info
   componentWillMount() {
     this.setState({
       name: this.props.name,

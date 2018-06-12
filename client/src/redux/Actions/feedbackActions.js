@@ -39,7 +39,7 @@ export const getFeedbacks = () => dispatch => {
     .catch(err => console.log(err));
 };
 
-//Edit Feedback
+//Edit Feedback incomplete
 export const editFeedback = () => dispatch => {};
 
 //Getting a feedback for a particular employee

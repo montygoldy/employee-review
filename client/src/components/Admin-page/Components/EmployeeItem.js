@@ -14,10 +14,12 @@ class EmployeeItem extends Component {
     openEditModal: false
   };
 
+  //Edit employee modal
   editEmployee = () => {
     this.setState({ openEditModal: !this.state.openEditModal });
   };
 
+  //dispatching delete employee action
   deleteEmployee = employeeId => {
     this.props.deleteEmployee(employeeId);
   };
@@ -44,9 +46,11 @@ class EmployeeItem extends Component {
             <Link to={`/review/${employeeId}`}>
               <i className="fas fa-eye" />
             </Link>
+
             <button className="edit" onClick={this.editEmployee}>
               <i className="fas fa-pencil-alt" />
             </button>
+
             <Modal
               open={this.state.openEditModal}
               onClose={this.editEmployee}
