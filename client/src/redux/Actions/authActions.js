@@ -12,15 +12,19 @@ export const loginUser = userData => dispatch => {
         type: SET_CURRENT_USER,
         payload: token
       });
-    });
+    })
+    .catch(err => console.log(err));
 };
 
 //Getting all users array from db.json
 export const getUsers = () => dispatch => {
-  axios.get("http://localhost:3004/users").then(response =>
-    dispatch({
-      type: GET_USERS,
-      payload: response.data
-    })
-  );
+  axios
+    .get("http://localhost:3004/users")
+    .then(response =>
+      dispatch({
+        type: GET_USERS,
+        payload: response.data
+      })
+    )
+    .catch(err => console.log(err));
 };

@@ -39,17 +39,35 @@ export const getFeedbacks = () => dispatch => {
     .catch(err => console.log(err));
 };
 
-//Edit Feedback incomplete
-export const editFeedback = () => dispatch => {};
+//Edit and update Feedback incomplete
+export const updateFeedback = newFeedbackData => dispatch => {
+  axios
+    .put(
+      `http://localhost:3004/feedbacks/${newFeedbackData.id}`,
+      newFeedbackData,
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    )
+    .then(response =>
+      dispatch({
+        type: UPDATE_FEEDBACK,
+        payload: response.data
+      })
+    )
+    .catch(err => console.log(err));
+};
 
 //Getting a feedback for a particular employee
 export const getFeedbackInfo = employeeId => dispatch => {
+  dispatch({ type: FEEDBACKS_LOADING });
   axios
-    .get(`http://localhost:3004/feedbacks?employeeId=${employeeId}`)
+    .post(`http://localhost:3004/feedbacks?employeeId=${employeeId}`)
     .then(response =>
       dispatch({
         type: GET_FEEDBACK,
         payload: response.data
       })
-    );
+    )
+    .catch(err => console.log(err));
 };

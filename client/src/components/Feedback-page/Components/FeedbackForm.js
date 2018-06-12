@@ -28,6 +28,8 @@ class FeedbackForm extends Component {
     });
   };
 
+  //For the feedback submission as per my database I need employeeId and name which I am getting through props. I also need reviewer name and Id which I am assuming to receive from user authentication.
+
   handleSubmit = e => {
     e.preventDefault();
     const { pro, con, comments, rating } = this.state;
@@ -80,7 +82,7 @@ class FeedbackForm extends Component {
           </div>
           <div className="submit-button flexCenter">
             <button className="button button--dark" onClick={this.handleSubmit}>
-              Submit Feedback
+              <i className="far fa-comments" /> Submit Feedback
             </button>
           </div>
         </form>

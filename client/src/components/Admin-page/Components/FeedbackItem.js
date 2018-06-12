@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { editFeedback } from "../../../redux/Actions/feedbackActions";
+import Modal from "react-responsive-modal";
+import EditFeedbackModal from "./EditFeedBackModal";
 
 class FeedbackItem extends Component {
-  editEmployee = employeeId => {
-    this.props.editFeedback(employeeId);
+  state = {
+    openEditModal: false
+  };
+
+  editFeedback = () => {
+    this.setState({ openEditModal: !this.state.openEditModal });
   };
 
   render() {
@@ -16,6 +20,7 @@ class FeedbackItem extends Component {
       con,
       comments,
       rating,
+      reviewerId,
       reviewerName,
       employeeName,
       employeeId
@@ -33,9 +38,28 @@ class FeedbackItem extends Component {
             <Link to={`/review/${employeeId}`}>
               <i className="fas fa-eye" />
             </Link>
-            <button className="edit">
+            <button className="edit" onClick={this.editFeedback}>
               <i className="fas fa-pencil-alt" />
             </button>
+
+            <Modal
+              open={this.state.openEditModal}
+              onClose={this.editFeedback}
+              center
+            >
+              <EditFeedbackModal
+                con={con}
+                pro={pro}
+                comments={comments}
+                rating={rating}
+                id={id}
+                employeeId={employeeId}
+                employeeName={employeeName}
+                reviewerName={reviewerName}
+                reviewerId={reviewerId}
+                onClose={this.editFeedback}
+              />
+            </Modal>
             <Link to={`/review/${employeeId}`} className="add">
               <i className="fas fa-plus-circle" />
             </Link>
@@ -48,6 +72,9 @@ class FeedbackItem extends Component {
 
 FeedbackItem.propTypes = {
   employeeId: PropTypes.string.isRequired,
+  reviewerId: PropTypes.string.isRequired,
+  reviewerName: PropTypes.string.isRequired,
+  employeeName: PropTypes.string.isRequired,
   pro: PropTypes.string.isRequired,
   con: PropTypes.string.isRequired,
   comments: PropTypes.string.isRequired,
@@ -55,7 +82,4 @@ FeedbackItem.propTypes = {
   id: PropTypes.number.isRequired
 };
 
-export default connect(
-  null,
-  { editFeedback }
-)(FeedbackItem);
+export default FeedbackItem;

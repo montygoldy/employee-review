@@ -12,8 +12,9 @@ This is a test submission for frontend developer position at paytm labs. It is a
 ## Future addons
 
 1.  Authentication
-2.  Private routes with jsonwebtoken authentication
-3.  Assign employees to participate in another employee's performance review
+2.  Validations and Test Suite
+3.  Private routes with jsonwebtoken authentication
+4.  Assign employees to participate in another employee's performance review
 
 ## Technologies/Dependencies used
 
@@ -23,7 +24,7 @@ This is a test submission for frontend developer position at paytm labs. It is a
 - React-modal for popup
 - React-star-rating for the rating a employee
 
-### Installing
+## Installing
 
 1.  Clone the repository.
 2.  "cd" inside the project folder.

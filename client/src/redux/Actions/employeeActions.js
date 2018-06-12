@@ -49,7 +49,8 @@ export const getEmployeeDetails = employeeId => dispatch => {
         type: GET_EMPLOYEE,
         payload: response.data[0]
       })
-    );
+    )
+    .catch(err => console.log(err));
 };
 
 //Edit and Update Employee details

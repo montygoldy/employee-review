@@ -13,6 +13,7 @@ import EmployeeList from "../Components/EmployeeList";
 import HeadInfo from "../Components/HeadInfo";
 import FeedbackList from "../Components/FeedbackList";
 import PropTypes from "prop-types";
+import Loader from "../../Reusable/Loader";
 
 class AdminDashboard extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class AdminDashboard extends Component {
   }
 
   render() {
-    const { employees } = this.props.employeeList;
+    const { employees, loading } = this.props.employeeList;
     const { feedbacks } = this.props.feedbackList;
     const { users } = this.props.userList;
     return (
@@ -70,17 +71,25 @@ class AdminDashboard extends Component {
                 <AddEmployeeModal addNewEmployee={this.addNewEmployee} />
               </Modal>
 
-              <EmployeeList
-                employees={employees}
-                deleteEmployee={this.deleteEmployee}
-              />
+              {loading ? (
+                <Loader />
+              ) : (
+                <EmployeeList
+                  employees={employees}
+                  deleteEmployee={this.deleteEmployee}
+                />
+              )}
             </div>
           </section>
           <section className="feedback">
             <div className="employees__table">
               <h4 className="semi-heading">Feedback Table</h4>
 
-              <FeedbackList feedbacks={feedbacks} />
+              {this.props.feedbackList.loading ? (
+                <Loader />
+              ) : (
+                <FeedbackList feedbacks={feedbacks} />
+              )}
             </div>
           </section>
         </div>

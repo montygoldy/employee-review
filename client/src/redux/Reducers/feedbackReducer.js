@@ -25,6 +25,14 @@ export default (state = initialState, action) => {
         feedbacks: action.payload,
         loading: false
       };
+    case UPDATE_FEEDBACK:
+      return {
+        ...state,
+        feedbacks: state.feedbacks.map(
+          feedback =>
+            feedback.id === action.payload.id ? action.payload : feedback
+        )
+      };
     case ADD_FEEDBACK:
       return {
         ...state,

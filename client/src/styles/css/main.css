@@ -590,9 +590,21 @@ table {
   padding: 3rem; }
   .modal-popup input,
   .modal-popup textarea {
-    width: 100% !important; }
+    width: 75% !important; }
   .modal-popup h4 {
     text-align: center; }
+  .modal-popup .rating {
+    margin: 2rem 0; }
+  .modal-popup .input-group {
+    justify-content: space-between; }
+    .modal-popup .input-group label {
+      flex: 0 0 22%;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      font-family: "Fjalla One", sans-serif;
+      letter-spacing: 1px; }
+    .modal-popup .input-group .star-group {
+      flex: 0 0 75%; }
 
 .closeButton,
 .closeIcon {

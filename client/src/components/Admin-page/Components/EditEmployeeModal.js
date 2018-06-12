@@ -73,7 +73,6 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.name}
             onChange={this.handleChange}
-            label={false}
           />
           <InputField
             name="title"
@@ -81,14 +80,12 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.title}
             onChange={this.handleChange}
-            label={false}
           />
           <TextareaField
             name="funFact"
             placeholder="Employee Info"
             value={this.state.funFact}
             onChange={this.handleChange}
-            label={false}
           />
           <InputField
             name="image"
@@ -96,7 +93,6 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.image}
             onChange={this.handleChange}
-            label={false}
           />
           <InputField
             name="employeeId"
@@ -104,7 +100,6 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.employeeId}
             onChange={this.handleChange}
-            label={false}
           />
           <InputField
             name="dateOfJoining"
@@ -112,11 +107,10 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.dateOfJoining}
             onChange={this.handleChange}
-            label={false}
           />
           <div className="flexCenter">
             <button className="button button--dark" onClick={this.handleSubmit}>
-              <i className="fas fa-user-plus" />Edit Employee
+              <i className="fas fa-user-edit" />Edit Employee
             </button>
           </div>
         </form>
@@ -132,7 +126,8 @@ EditEmployeeModal.propTypes = {
   dateOfJoining: PropTypes.string.isRequired,
   employeeId: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  updateEmployee: PropTypes.func.isRequired
 };
 
 export default connect(

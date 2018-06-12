@@ -11,7 +11,6 @@ export const FEEDBACKS_LOADING = "FEEDBACKS_LOADING";
 export const GET_FEEDBACKS = "GET_FEEDBACKS";
 export const GET_FEEDBACK = "GET_FEEDBACK";
 export const ADD_FEEDBACK = "ADD_FEEDBACK";
-export const EDIT_FEEDBACK = "EDIT_FEEDBACK";
 export const UPDATE_FEEDBACK = "UPDATE_FEEDBACK";
 
 //User Constants

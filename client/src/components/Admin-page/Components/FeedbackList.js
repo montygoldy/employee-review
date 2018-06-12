@@ -13,6 +13,7 @@ class FeedbackList extends Component {
         con={feedback.con}
         comments={feedback.comments}
         rating={feedback.rating}
+        reviewerId={feedback.reviewerId}
         reviewerName={feedback.reviewerName}
         employeeName={feedback.employeeName}
       />
