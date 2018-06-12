@@ -4,6 +4,7 @@ import {
   GET_EMPLOYEE,
   EMPLOYEES_LOADING,
   ADD_EMPLOYEE,
+  UPDATE_EMPLOYEE,
   DELETE_EMPLOYEE
 } from "./types";
 
@@ -49,6 +50,25 @@ export const getEmployeeDetails = employeeId => dispatch => {
         payload: response.data[0]
       })
     );
+};
+
+//Edit and Update Employee details
+export const updateEmployee = newEmployeeData => dispatch => {
+  axios
+    .put(
+      `http://localhost:3004/employees/${newEmployeeData.id}`,
+      newEmployeeData,
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    )
+    .then(response =>
+      dispatch({
+        type: UPDATE_EMPLOYEE,
+        payload: response.data
+      })
+    )
+    .catch(err => console.log(err));
 };
 
 //Delete Employee

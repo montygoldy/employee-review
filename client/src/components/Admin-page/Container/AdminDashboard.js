@@ -8,17 +8,16 @@ import {
 import { getFeedbacks } from "../../../redux/Actions/feedbackActions";
 import AddEmployeeModal from "../Components/AddEmployeeModal";
 import Modal from "react-responsive-modal";
-import EmployeeTable from "../Components/EmployeeTable";
+import EmployeeList from "../Components/EmployeeList";
 import HeadInfo from "../Components/HeadInfo";
-import FeedbackTable from "../Components/FeedbackTable";
+import FeedbackList from "../Components/FeedbackList";
 import PropTypes from "prop-types";
 
 class AdminDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openAddEmployeeModal: false,
-      openEditEmployeeModal: false
+      openAddEmployeeModal: false
     };
   }
 
@@ -28,10 +27,6 @@ class AdminDashboard extends Component {
 
   addNewEmployee = employeeData => {
     this.props.addEmployee(employeeData);
-  };
-
-  deleteEmployee = employeeId => {
-    this.props.deleteEmployee(employeeId);
   };
 
   componentDidMount() {
@@ -66,7 +61,7 @@ class AdminDashboard extends Component {
                 <AddEmployeeModal addNewEmployee={this.addNewEmployee} />
               </Modal>
 
-              <EmployeeTable
+              <EmployeeList
                 employees={employees}
                 deleteEmployee={this.deleteEmployee}
               />
@@ -74,13 +69,8 @@ class AdminDashboard extends Component {
           </section>
           <section className="feedback">
             <div className="employees__table">
-              <div className="flexFit">
-                <h4 className="semi-heading">Feedback Table</h4>
-                <button className="button button--white add-employee">
-                  <i className="fas fa-plus-circle" /> Add New Feedback
-                </button>
-              </div>
-              <FeedbackTable feedbacks={feedbacks} />
+              <h4 className="semi-heading">Feedback Table</h4>
+              <FeedbackList feedbacks={feedbacks} />
             </div>
           </section>
         </div>

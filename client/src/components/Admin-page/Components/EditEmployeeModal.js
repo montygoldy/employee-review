@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import InputField from "../../Reusable/FormElements/InputField";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { updateEmployee } from "../../../redux/Actions/employeeActions";
 
 class EditEmployeeModal extends Component {
   constructor(props) {
@@ -25,21 +27,44 @@ class EditEmployeeModal extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // const {
-    //   name,
-    //   title,
-    //   funFact,
-    //   image,
-    //   employeeId,
-    //   dateOfJoining
-    // } = this.state;
+    const {
+      name,
+      title,
+      funFact,
+      image,
+      employeeId,
+      dateOfJoining,
+      id
+    } = this.state;
+    const updateData = {
+      name,
+      title,
+      funFact,
+      image,
+      employeeId,
+      dateOfJoining,
+      id
+    };
+    this.props.updateEmployee(updateData);
+    this.props.onClose();
   };
+
+  componentWillMount() {
+    this.setState({
+      name: this.props.name,
+      title: this.props.title,
+      funFact: this.props.funFact,
+      image: this.props.image,
+      employeeId: this.props.employeeId,
+      dateOfJoining: this.props.dateOfJoining,
+      id: this.props.id
+    });
+  }
 
   render() {
     return (
       <div className="modal-popup">
         <h4 className="semi-heading">Edit Employee</h4>
-        {this.props.employee}
         <form>
           <InputField
             name="name"
@@ -66,7 +91,7 @@ class EditEmployeeModal extends Component {
           />
           <InputField
             name="image"
-            placeholder="Image"
+            placeholder="Employee Image"
             type="text"
             value={this.state.image}
             onChange={this.handleChange}
@@ -99,4 +124,17 @@ class EditEmployeeModal extends Component {
   }
 }
 
-export default EditEmployeeModal;
+EditEmployeeModal.propTypes = {
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  funFact: PropTypes.string.isRequired,
+  dateOfJoining: PropTypes.string.isRequired,
+  employeeId: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired
+};
+
+export default connect(
+  null,
+  { updateEmployee }
+)(EditEmployeeModal);

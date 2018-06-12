@@ -3,7 +3,8 @@ import {
   EMPLOYEES_LOADING,
   ADD_EMPLOYEE,
   GET_EMPLOYEE,
-  DELETE_EMPLOYEE
+  DELETE_EMPLOYEE,
+  UPDATE_EMPLOYEE
 } from "../Actions/types";
 
 const initialState = {
@@ -36,6 +37,14 @@ export default (state = initialState, action) => {
         ...state,
         employees: [action.payload, ...state.employees],
         loading: false
+      };
+    case UPDATE_EMPLOYEE:
+      return {
+        ...state,
+        employees: state.employees.map(
+          employee =>
+            employee.id === action.payload.id ? action.payload : employee
+        )
       };
     case DELETE_EMPLOYEE:
       return {

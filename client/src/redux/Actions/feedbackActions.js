@@ -39,5 +39,17 @@ export const getFeedbacks = () => dispatch => {
     .catch(err => console.log(err));
 };
 
+//Edit Feedback
+export const editFeedback = () => dispatch => {};
+
 //Getting a feedback for a particular employee
-export const getFeedbackInfo = () => dispatch => {};
+export const getFeedbackInfo = employeeId => dispatch => {
+  axios
+    .get(`http://localhost:3004/feedbacks?employeeId=${employeeId}`)
+    .then(response =>
+      dispatch({
+        type: GET_FEEDBACK,
+        payload: response.data
+      })
+    );
+};

@@ -83,6 +83,9 @@
         a {
           color: $text-color-dark;
           margin-right: 1rem;
+          &.add {
+            color: $primary-color;
+          }
         }
         button {
           cursor: pointer;

@@ -682,6 +682,9 @@ section.employee-review {
       .dashboard .feedback__table td.actions a {
         color: #475C8A;
         margin-right: 1rem; }
+        .dashboard .employees__table td.actions a.add,
+        .dashboard .feedback__table td.actions a.add {
+          color: #39ACFC; }
       .dashboard .employees__table td.actions button,
       .dashboard .feedback__table td.actions button {
         cursor: pointer; }
