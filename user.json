@@ -1,0 +1,24 @@
+{
+  "users": [{
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "isAdmin": true,
+      "userId": 1
+    },
+    {
+      "name": "jane",
+      "email": "jane@gmail.com",
+      "password": "jane",
+      "isAdmin": false,
+      "userId": 2
+    },
+    {
+      "name": "jonh",
+      "email": "jonh@gmail.com",
+      "password": "john",
+      "isAdmin": false,
+      "userId": 3
+    }
+  ]
+}

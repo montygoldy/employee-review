@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import InputField from "../Reusable/FormElements/InputField";
+import { loginUser } from "../../redux/Actions/authActions";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 class Login extends Component {
   state = {
     email: "",
@@ -13,6 +16,16 @@ class Login extends Component {
     });
   };
 
+  onSubmit = e => {
+    e.preventDefault();
+    const { email, password } = this.state;
+    const data = {
+      email,
+      password
+    };
+    this.props.loginUser(data);
+    this.props.history.push("/review");
+  };
   render() {
     return (
       <div className="container">
@@ -35,7 +48,9 @@ class Login extends Component {
               value={this.state.password}
               onChange={this.onChange}
             />
-            <button className="button button--dark">Sign In Now</button>
+            <button className="button button--dark" onClick={this.onSubmit}>
+              Sign In Now
+            </button>
           </form>
         </div>
       </div>
@@ -43,4 +58,7 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect(
+  null,
+  { loginUser }
+)(withRouter(Login));

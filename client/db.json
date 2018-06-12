@@ -37,7 +37,7 @@
       "dateOfJoining": "10/12/2014"
     },
     {
-      "name": "Tom Cruise ",
+      "name": "Tom Cruise",
       "title": "Hiring Manager",
       "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "image": "http://placeholder.pics/svg/300x200/000000",
@@ -62,13 +62,42 @@
       "employeeId": "12341234",
       "dateOfJoining": "12/10/2016",
       "id": 7
+    },
+    {
+      "name": "Roshan Prince 2",
+      "title": "Developer ||",
+      "funFact": "I am good humble , hardworkign guy with passion towards technology",
+      "image": "http://placeholder.pics/svg/300x200/303030",
+      "employeeId": "12345633",
+      "dateOfJoining": "20/11/2017",
+      "id": 8
+    },
+    {
+      "name": "Roger junior",
+      "title": "designer",
+      "funFact": "fun loving",
+      "image": "http://placeholder.pics/svg/300x200/cccccc",
+      "employeeId": "12121212",
+      "dateOfJoining": "12/10/2018",
+      "id": 9
+    },
+    {
+      "name": "roger",
+      "title": "designer",
+      "funFact": "funloving",
+      "image": "http://placeholder.pics/svg/300x200/ccc",
+      "employeeId": "1212121212",
+      "dateOfJoining": "04/12/2013",
+      "id": 10
     }
   ],
   "feedbacks": [
     {
       "id": 1,
-      "feedbackId": "8928627",
+      "reviewerId": "33333333",
+      "reviewerName": "Julius Caesar 2",
       "employeeId": "12341234",
+      "employeeName": "Joshua Fluke",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
@@ -76,8 +105,10 @@
     },
     {
       "id": 2,
-      "feedbackId": "2323456",
       "employeeId": "11223344",
+      "employeeName": "John Doe",
+      "reviewerId": "22222222",
+      "reviewerName": "Tom Cruise",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
@@ -85,8 +116,10 @@
     },
     {
       "id": 3,
-      "feedbackId": "232323",
       "employeeId": "22222222",
+      "employeeName": "Tom Cruise",
+      "reviewerId": "33333333",
+      "reviewerName": "Julius Caesar 2",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
@@ -95,7 +128,9 @@
     {
       "id": 4,
       "employeeId": "11223344",
-      "feedbackId": "1231231",
+      "employeeName": "John Doe",
+      "reviewerId": "33333333",
+      "reviewerName": "Julius Caesar 2",
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
@@ -103,11 +138,23 @@
     },
     {
       "pro": "wcwcwcwc",
-      "employeeId": "1555554",
+      "employeeId": "12345678",
+      "employeeName": "Jane Doe",
+      "reviewerName": "John Doe",
+      "reviewerId": "11223344",
       "con": "wcwcwcwcw",
       "comments": "wcddwvvwvwvwv",
       "rating": 8,
       "id": 5
+    },
+    {
+      "pro": "Hard working",
+      "con": "Lazy sometimes",
+      "comments": "Need to focus",
+      "rating": 8,
+      "employeeId": "22222222",
+      "employeeName": "Tom Cruise",
+      "id": 6
     }
   ],
   "users": [

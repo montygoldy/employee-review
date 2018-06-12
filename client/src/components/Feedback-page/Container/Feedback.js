@@ -29,7 +29,11 @@ class Feedback extends Component {
           </div>
           <div className="wrapper flexFit">
             <EmployeeInfo employee={employee} />
-            <FeedbackForm addFeedback={this.addFeedback} />
+            <FeedbackForm
+              addFeedback={this.addFeedback}
+              employeeId={employee.employeeId}
+              employeeName={employee.name}
+            />
           </div>
         </div>
       </div>

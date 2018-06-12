@@ -10,10 +10,20 @@ class FeedbackItem extends Component {
   };
 
   render() {
-    const { id, employeeId, pro, con, comments, rating } = this.props;
+    const {
+      id,
+      pro,
+      con,
+      comments,
+      rating,
+      reviewerName,
+      employeeName,
+      employeeId
+    } = this.props;
     return (
       <tr key={id} className="feedback_heading">
-        <td>{employeeId}</td>
+        <td>{reviewerName}</td>
+        <td>{employeeName}</td>
         <td>{pro}</td>
         <td>{con}</td>
         <td>{comments}</td>

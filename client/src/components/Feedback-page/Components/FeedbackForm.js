@@ -31,11 +31,14 @@ class FeedbackForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { pro, con, comments, rating } = this.state;
+    const { employeeId, employeeName } = this.props;
     const feedbackData = {
       pro,
       con,
       comments,
-      rating
+      rating,
+      employeeId,
+      employeeName
     };
     this.props.addFeedback(feedbackData, this.props.history);
     this.setState({ pro: "", con: "", comments: "", rating: "" });

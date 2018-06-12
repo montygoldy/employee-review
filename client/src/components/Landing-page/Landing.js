@@ -8,7 +8,7 @@ const Landing = () => {
       <div className="homepage__logo">
         <h1>Logo</h1>
       </div>
-      <video className="homepage__video" loop autoPlay>
+      <video className="homepage__video" muted loop autoPlay>
         <source src={Video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

@@ -13,6 +13,8 @@ class FeedbackList extends Component {
         con={feedback.con}
         comments={feedback.comments}
         rating={feedback.rating}
+        reviewerName={feedback.reviewerName}
+        employeeName={feedback.employeeName}
       />
     ));
 
@@ -20,7 +22,8 @@ class FeedbackList extends Component {
       <table>
         <thead>
           <tr>
-            <th>Employee Id</th>
+            <th>Reviewer Name</th>
+            <th>Employee Name</th>
             <th>Con</th>
             <th>Pro</th>
             <th>Comments</th>
