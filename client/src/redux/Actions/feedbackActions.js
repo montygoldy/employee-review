@@ -5,20 +5,16 @@ import {
   FEEDBACKS_LOADING,
   GET_FEEDBACK
 } from "./types";
-import axios from "axios";
+import api from "../../Api";
 
 //Add Feedback
 export const addFeedback = (feedbackData, history) => dispatch => {
-  axios
-    .post(
-      "http://localhost:3004/feedbacks",
-      feedbackData, //data
-      { headers: { "Content-Type": "application/json" } } //config
-    )
-    .then(response =>
+  api.feedback
+    .add(feedbackData)
+    .then(data =>
       dispatch({
         type: ADD_FEEDBACK,
-        payload: response.data
+        payload: data
       })
     )
     .then(history.push("/review"))
@@ -28,12 +24,12 @@ export const addFeedback = (feedbackData, history) => dispatch => {
 //Get Feedbacks
 export const getFeedbacks = () => dispatch => {
   dispatch({ type: FEEDBACKS_LOADING });
-  axios
-    .get("http://localhost:3004/feedbacks")
-    .then(response =>
+  api.feedback
+    .all()
+    .then(data =>
       dispatch({
         type: GET_FEEDBACKS,
-        payload: response.data
+        payload: data
       })
     )
     .catch(err => console.log(err));
@@ -41,18 +37,12 @@ export const getFeedbacks = () => dispatch => {
 
 //Edit and update Feedback incomplete
 export const updateFeedback = newFeedbackData => dispatch => {
-  axios
-    .put(
-      `http://localhost:3004/feedbacks/${newFeedbackData.id}`,
-      newFeedbackData,
-      {
-        headers: { "Content-Type": "application/json" }
-      }
-    )
-    .then(response =>
+  api.feedback
+    .edit(newFeedbackData)
+    .then(data =>
       dispatch({
         type: UPDATE_FEEDBACK,
-        payload: response.data
+        payload: data
       })
     )
     .catch(err => console.log(err));
@@ -61,12 +51,12 @@ export const updateFeedback = newFeedbackData => dispatch => {
 //Getting a feedback for a particular employee
 export const getFeedbackInfo = employeeId => dispatch => {
   dispatch({ type: FEEDBACKS_LOADING });
-  axios
-    .post(`http://localhost:3004/feedbacks?employeeId=${employeeId}`)
-    .then(response =>
+  api.feedback
+    .feedbackInfo(employeeId)
+    .then(data =>
       dispatch({
         type: GET_FEEDBACK,
-        payload: response.data
+        payload: data
       })
     )
     .catch(err => console.log(err));

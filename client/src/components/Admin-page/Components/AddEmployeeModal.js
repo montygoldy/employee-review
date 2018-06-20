@@ -54,7 +54,7 @@ class AddEmployeeModal extends Component {
 
   render() {
     return (
-      <div className="modal-popup">
+      <div className="modal-popup addemployeeModal">
         <h4 className="semi-heading">Add Employee</h4>
         <form>
           <InputField

@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   GET_EMPLOYEES,
   GET_EMPLOYEE,
@@ -7,19 +6,16 @@ import {
   UPDATE_EMPLOYEE,
   DELETE_EMPLOYEE
 } from "./types";
+import api from "../../Api";
 
 //Add Employee
 export const addEmployee = employeeData => dispatch => {
-  axios
-    .post(
-      "http://localhost:3004/employees",
-      employeeData, //data
-      { headers: { "Content-Type": "application/json" } } //config
-    )
-    .then(response =>
+  api.employee
+    .add(employeeData)
+    .then(data =>
       dispatch({
         type: ADD_EMPLOYEE,
-        payload: response.data
+        payload: data
       })
     )
     .catch(err => console.log(err));
@@ -28,12 +24,12 @@ export const addEmployee = employeeData => dispatch => {
 //Get Employees
 export const getEmployees = () => dispatch => {
   dispatch({ type: EMPLOYEES_LOADING });
-  axios
-    .get("http://localhost:3004/employees")
-    .then(response =>
+  api.employee
+    .all()
+    .then(data =>
       dispatch({
         type: GET_EMPLOYEES,
-        payload: response.data
+        payload: data
       })
     )
     .catch(err => console.log(err));
@@ -42,12 +38,12 @@ export const getEmployees = () => dispatch => {
 //Get Employee details
 export const getEmployeeDetails = employeeId => dispatch => {
   dispatch({ type: EMPLOYEES_LOADING });
-  axios
-    .get(`http://localhost:3004/employees?employeeId=${employeeId}`)
-    .then(response =>
+  api.employee
+    .getInfo(employeeId)
+    .then(data =>
       dispatch({
         type: GET_EMPLOYEE,
-        payload: response.data[0]
+        payload: data
       })
     )
     .catch(err => console.log(err));
@@ -55,18 +51,12 @@ export const getEmployeeDetails = employeeId => dispatch => {
 
 //Edit and Update Employee details
 export const updateEmployee = newEmployeeData => dispatch => {
-  axios
-    .put(
-      `http://localhost:3004/employees/${newEmployeeData.id}`,
-      newEmployeeData,
-      {
-        headers: { "Content-Type": "application/json" }
-      }
-    )
-    .then(response =>
+  api.employee
+    .edit(newEmployeeData)
+    .then(data =>
       dispatch({
         type: UPDATE_EMPLOYEE,
-        payload: response.data
+        payload: data
       })
     )
     .catch(err => console.log(err));
@@ -74,10 +64,8 @@ export const updateEmployee = newEmployeeData => dispatch => {
 
 //Delete Employee
 export const deleteEmployee = employeeId => dispatch => {
-  axios
-    .delete(`http://localhost:3004/employees?employeeId=${employeeId}`, {
-      headers: { "Content-Type": "application/json" }
-    })
+  api.employee
+    .delete(employeeId)
     .then(
       dispatch({
         type: DELETE_EMPLOYEE,

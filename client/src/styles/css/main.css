@@ -586,11 +586,15 @@ table {
   max-width: 60rem !important;
   width: 70% !important; }
 
+.addemployeeModal input,
+.addemployeeModal textarea {
+  width: 100% !important; }
+
 .modal-popup {
   padding: 3rem; }
   .modal-popup input,
   .modal-popup textarea {
-    width: 75% !important; }
+    width: 75%; }
   .modal-popup h4 {
     text-align: center; }
   .modal-popup .rating {
