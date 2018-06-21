@@ -2,6 +2,7 @@ import {
   GET_EMPLOYEES,
   EMPLOYEES_LOADING,
   ADD_EMPLOYEE,
+  ADD_EMPLOYEE_REQUEST,
   GET_EMPLOYEE,
   DELETE_EMPLOYEE,
   UPDATE_EMPLOYEE
@@ -37,6 +38,11 @@ export default (state = initialState, action) => {
         ...state,
         employees: [action.payload, ...state.employees],
         loading: false
+      };
+    case ADD_EMPLOYEE_REQUEST:
+      return {
+        ...state,
+        loading: true
       };
     case UPDATE_EMPLOYEE:
       return {

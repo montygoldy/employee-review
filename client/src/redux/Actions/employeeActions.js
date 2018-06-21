@@ -3,23 +3,34 @@ import {
   GET_EMPLOYEE,
   EMPLOYEES_LOADING,
   ADD_EMPLOYEE,
+  ADD_EMPLOYEE_REQUEST,
   UPDATE_EMPLOYEE,
   DELETE_EMPLOYEE
 } from "./types";
 import api from "../../Api";
 
 //Add Employee
-export const addEmployee = employeeData => dispatch => {
-  api.employee
-    .add(employeeData)
-    .then(data =>
-      dispatch({
-        type: ADD_EMPLOYEE,
-        payload: data
-      })
-    )
-    .catch(err => console.log(err));
-};
+export const addEmployeeRequest = employeeData => ({
+  type: ADD_EMPLOYEE_REQUEST,
+  payload: employeeData
+});
+
+export const addEmployee = employeeData => ({
+  type: ADD_EMPLOYEE,
+  payload: employeeData
+});
+
+// export const addEmployee = employeeData => dispatch => {
+//   api.employee
+//     .add(employeeData)
+//     .then(data =>
+//       dispatch({
+//         type: ADD_EMPLOYEE,
+//         payload: data
+//       })
+//     )
+//     .catch(err => console.log(err));
+// };
 
 //Get Employees
 export const getEmployees = () => dispatch => {

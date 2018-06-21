@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
   getEmployees,
-  addEmployee,
+  addEmployeeRequest,
   deleteEmployee
 } from "../../../redux/Actions/employeeActions";
 import { getUsers } from "../../../redux/Actions/authActions";
@@ -29,7 +29,7 @@ class AdminDashboard extends Component {
 
   //Dispatching addEmployee action with form data
   addNewEmployee = employeeData => {
-    this.props.addEmployee(employeeData);
+    this.props.addEmployeeRequest(employeeData);
   };
 
   //Dispatching action to get all the employees and feedback on mount
@@ -101,7 +101,7 @@ class AdminDashboard extends Component {
 AdminDashboard.propTypes = {
   employeeList: PropTypes.object.isRequired,
   feedbackList: PropTypes.object.isRequired,
-  addEmployee: PropTypes.func.isRequired,
+  addEmployeeRequest: PropTypes.func.isRequired,
   deleteEmployee: PropTypes.func.isRequired,
   getEmployees: PropTypes.func.isRequired,
   getFeedbacks: PropTypes.func.isRequired,
@@ -116,5 +116,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getEmployees, addEmployee, deleteEmployee, getFeedbacks, getUsers }
+  { getEmployees, addEmployeeRequest, deleteEmployee, getFeedbacks, getUsers }
 )(AdminDashboard);

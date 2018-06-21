@@ -1,5 +1,6 @@
 {
-  "employees": [{
+  "employees": [
+    {
       "name": "John Doe 2",
       "title": "Senior Manager",
       "funFact": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -97,9 +98,28 @@
       "employeeId": "43534543",
       "dateOfJoining": "04/12/2017",
       "id": 11
+    },
+    {
+      "name": "Gurpreet",
+      "title": "Sales executive",
+      "funFact": "this is my info",
+      "image": "http://placeholder.pics/svg/300x200/000000",
+      "employeeId": "34234577",
+      "dateOfJoining": "04/12/2017",
+      "id": 12
+    },
+    {
+      "name": "sadsadad",
+      "title": "sadaaf",
+      "funFact": "safsafafa",
+      "image": "http://placeholder.pics/svg/300x200/000000",
+      "employeeId": "4211414141",
+      "dateOfJoining": "04/12/2013",
+      "id": 13
     }
   ],
-  "feedbacks": [{
+  "feedbacks": [
+    {
       "pro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "con": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
@@ -155,7 +175,8 @@
       "id": 5
     }
   ],
-  "users": [{
+  "users": [
+    {
       "name": "admin",
       "email": "admin@gmail.com",
       "password": "admin",
