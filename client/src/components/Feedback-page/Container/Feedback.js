@@ -3,18 +3,21 @@ import EmployeeInfo from "../Components/EmployeeInfo";
 import { Link } from "react-router-dom";
 import FeedbackForm from "../Components/FeedbackForm";
 import { connect } from "react-redux";
-import { getEmployeeDetails } from "../../../redux/Actions/employeeActions";
-import { addFeedback } from "../../../redux/Actions/feedbackActions";
+import { getEmployeeDetailsRequest } from "../../../redux/Actions/employeeActions";
+import {
+  addFeedbackRequest,
+  getFeedbackRequest
+} from "../../../redux/Actions/feedbackActions";
 import PropTypes from "prop-types";
 
 class Feedback extends Component {
   //Dispatching action add new feedback
-  addFeedback = (feedbackData, history) => {
-    this.props.addFeedback(feedbackData, history);
+  addFeedback = feedbackData => {
+    this.props.addFeedbackRequest(feedbackData);
   };
 
   componentDidMount = () => {
-    this.props.getEmployeeDetails(this.props.match.params.id);
+    this.props.getEmployeeDetailsRequest(this.props.match.params.id);
   };
 
   render() {
@@ -45,8 +48,8 @@ class Feedback extends Component {
 Feedback.propTypes = {
   feedbackList: PropTypes.object.isRequired,
   employeeList: PropTypes.object.isRequired,
-  addFeedback: PropTypes.func.isRequired,
-  getEmployeeDetails: PropTypes.func.isRequired
+  addFeedbackRequest: PropTypes.func.isRequired,
+  getEmployeeDetailsRequest: PropTypes.func.isRequired
 };
 
 const mapStatetoProps = state => ({
@@ -56,5 +59,5 @@ const mapStatetoProps = state => ({
 
 export default connect(
   mapStatetoProps,
-  { getEmployeeDetails, addFeedback }
+  { getEmployeeDetailsRequest, addFeedbackRequest, getFeedbackRequest }
 )(Feedback);

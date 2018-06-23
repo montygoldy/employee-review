@@ -1,7 +1,7 @@
-import { takeLatest } from "redux-saga/effects";
-import { ADD_EMPLOYEE_REQUEST } from "../Actions/types";
-import { addEmployeeSaga } from "./employeeSaga";
+import { employeeSaga } from "./employeeSaga";
+import { feedbackSaga } from "./feedbackSaga";
+import { all, fork } from "redux-saga/effects";
 
 export default function* rootSaga() {
-  yield takeLatest(ADD_EMPLOYEE_REQUEST, addEmployeeSaga);
+  yield all([fork(employeeSaga), fork(feedbackSaga)]);
 }

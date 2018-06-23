@@ -1,63 +1,64 @@
-import {
-  GET_FEEDBACKS,
-  ADD_FEEDBACK,
-  UPDATE_FEEDBACK,
-  FEEDBACKS_LOADING,
-  GET_FEEDBACK
-} from "./types";
-import api from "../../Api";
+import * as actionTypes from "./types";
 
 //Add Feedback
-export const addFeedback = (feedbackData, history) => dispatch => {
-  api.feedback
-    .add(feedbackData)
-    .then(data =>
-      dispatch({
-        type: ADD_FEEDBACK,
-        payload: data
-      })
-    )
-    .then(history.push("/review"))
-    .catch(err => console.log(err));
-};
+export const addFeedbackRequest = data => ({
+  type: actionTypes.ADD_FEEDBACK_REQUEST,
+  payload: data
+});
+
+export const addFeedback = feedbackData => ({
+  type: actionTypes.ADD_FEEDBACK,
+  payload: feedbackData
+});
+
+export const addFeedbackErrors = errors => ({
+  type: actionTypes.GET_ERRORS,
+  payload: errors
+});
 
 //Get Feedbacks
-export const getFeedbacks = () => dispatch => {
-  dispatch({ type: FEEDBACKS_LOADING });
-  api.feedback
-    .all()
-    .then(data =>
-      dispatch({
-        type: GET_FEEDBACKS,
-        payload: data
-      })
-    )
-    .catch(err => console.log(err));
-};
+export const getFeedbacksRequest = () => ({
+  type: actionTypes.GET_FEEDBACKS_REQUEST
+});
 
-//Edit and update Feedback incomplete
-export const updateFeedback = newFeedbackData => dispatch => {
-  api.feedback
-    .edit(newFeedbackData)
-    .then(data =>
-      dispatch({
-        type: UPDATE_FEEDBACK,
-        payload: data
-      })
-    )
-    .catch(err => console.log(err));
-};
+export const getFeedbacks = feedbacks => ({
+  type: actionTypes.GET_FEEDBACKS,
+  payload: feedbacks
+});
+
+export const getFeedbacksErrors = errors => ({
+  type: actionTypes.GET_ERRORS,
+  payload: errors
+});
+
+//Edit and update Feedback
+export const updateFeedbackRequest = newFeedbackData => ({
+  type: actionTypes.UPDATE_FEEDBACK_REQUEST,
+  payload: newFeedbackData
+});
+
+export const updateFeedback = newFeedbackData => ({
+  type: actionTypes.UPDATE_FEEDBACK,
+  payload: newFeedbackData
+});
+
+export const updateFeedbackErrors = errors => ({
+  type: actionTypes.GET_ERRORS,
+  payload: errors
+});
 
 //Getting a feedback for a particular employee
-export const getFeedbackInfo = employeeId => dispatch => {
-  dispatch({ type: FEEDBACKS_LOADING });
-  api.feedback
-    .feedbackInfo(employeeId)
-    .then(data =>
-      dispatch({
-        type: GET_FEEDBACK,
-        payload: data
-      })
-    )
-    .catch(err => console.log(err));
-};
+export const getFeedbackRequest = employeeId => ({
+  type: actionTypes.GET_FEEDBACK_REQUEST,
+  payload: employeeId
+});
+
+export const getFeedback = feedback => ({
+  type: actionTypes.GET_FEEDBACK,
+  payload: feedback
+});
+
+export const getFeedbackErrors = errors => ({
+  type: actionTypes.GET_ERRORS,
+  payload: errors
+});

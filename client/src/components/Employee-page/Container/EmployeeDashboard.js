@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import EmployeeList from "../Components/EmployeeList";
-import { getEmployees } from "../../../redux/Actions/employeeActions";
+import { getEmployeesRequest } from "../../../redux/Actions/employeeActions";
 import PropTypes from "prop-types";
 import Loader from "../../Reusable/Loader";
 
 class EmployeeDashboard extends Component {
   componentDidMount() {
-    this.props.getEmployees();
+    this.props.getEmployeesRequest();
   }
   render() {
     const { employees, loading } = this.props.employeeList;
@@ -23,7 +23,7 @@ class EmployeeDashboard extends Component {
 }
 
 EmployeeDashboard.propTypes = {
-  getEmployees: PropTypes.func.isRequired,
+  getEmployeesRequest: PropTypes.func.isRequired,
   employeeList: PropTypes.object.isRequired
 };
 
@@ -33,5 +33,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getEmployees }
+  { getEmployeesRequest }
 )(EmployeeDashboard);

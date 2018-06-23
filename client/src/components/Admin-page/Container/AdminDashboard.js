@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  getEmployees,
+  getEmployeesRequest,
   addEmployeeRequest,
   deleteEmployee
 } from "../../../redux/Actions/employeeActions";
 import { getUsers } from "../../../redux/Actions/authActions";
-import { getFeedbacks } from "../../../redux/Actions/feedbackActions";
+import { getFeedbacksRequest } from "../../../redux/Actions/feedbackActions";
 import AddEmployeeModal from "../Components/AddEmployeeModal";
 import Modal from "react-responsive-modal";
 import EmployeeList from "../Components/EmployeeList";
@@ -16,12 +16,10 @@ import PropTypes from "prop-types";
 import Loader from "../../Reusable/Loader";
 
 class AdminDashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      openAddEmployeeModal: false
-    };
-  }
+  state = {
+    openAddEmployeeModal: false
+  };
+
   //Toggling modal popup for add employee
   toggleAddEmployeeModal = () => {
     this.setState({ openAddEmployeeModal: !this.state.openAddEmployeeModal });
@@ -34,15 +32,17 @@ class AdminDashboard extends Component {
 
   //Dispatching action to get all the employees and feedback on mount
   componentDidMount() {
-    this.props.getEmployees();
-    this.props.getFeedbacks();
+    this.props.getEmployeesRequest();
+    this.props.getFeedbacksRequest();
     this.props.getUsers();
   }
 
   render() {
-    const { employees, loading } = this.props.employeeList;
-    const { feedbacks } = this.props.feedbackList;
-    const { users } = this.props.userList;
+    const {
+      employeeList: { employees, loading },
+      feedbackList: { feedbacks },
+      userList: { users }
+    } = this.props;
     return (
       <div className="container">
         <div className="dashboard">
@@ -103,8 +103,8 @@ AdminDashboard.propTypes = {
   feedbackList: PropTypes.object.isRequired,
   addEmployeeRequest: PropTypes.func.isRequired,
   deleteEmployee: PropTypes.func.isRequired,
-  getEmployees: PropTypes.func.isRequired,
-  getFeedbacks: PropTypes.func.isRequired,
+  getEmployeesRequest: PropTypes.func.isRequired,
+  getFeedbacksRequest: PropTypes.func.isRequired,
   getUsers: PropTypes.func.isRequired
 };
 
@@ -116,5 +116,11 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getEmployees, addEmployeeRequest, deleteEmployee, getFeedbacks, getUsers }
+  {
+    getEmployeesRequest,
+    addEmployeeRequest,
+    deleteEmployee,
+    getFeedbacksRequest,
+    getUsers
+  }
 )(AdminDashboard);

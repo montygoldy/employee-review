@@ -1,50 +1,43 @@
-import {
-  GET_EMPLOYEES,
-  EMPLOYEES_LOADING,
-  ADD_EMPLOYEE,
-  ADD_EMPLOYEE_REQUEST,
-  GET_EMPLOYEE,
-  DELETE_EMPLOYEE,
-  UPDATE_EMPLOYEE
-} from "../Actions/types";
+import * as actionTypes from "../Actions/types";
 
 const initialState = {
   loading: false,
   employees: [],
-  employee: {}
+  employee: {},
+  errors: {}
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case EMPLOYEES_LOADING:
+    case actionTypes.GET_EMPLOYEES_REQUEST:
       return {
         ...state,
         loading: true
       };
-    case GET_EMPLOYEES:
+    case actionTypes.GET_EMPLOYEES:
       return {
         ...state,
         employees: action.payload,
         loading: false
       };
-    case GET_EMPLOYEE:
+    case actionTypes.GET_EMPLOYEE:
       return {
         ...state,
         employee: action.payload,
         loading: false
       };
-    case ADD_EMPLOYEE:
+    case actionTypes.ADD_EMPLOYEE:
       return {
         ...state,
         employees: [action.payload, ...state.employees],
         loading: false
       };
-    case ADD_EMPLOYEE_REQUEST:
+    case actionTypes.ADD_EMPLOYEE_REQUEST:
       return {
         ...state,
         loading: true
       };
-    case UPDATE_EMPLOYEE:
+    case actionTypes.UPDATE_EMPLOYEE:
       return {
         ...state,
         employees: state.employees.map(
@@ -52,7 +45,7 @@ export default (state = initialState, action) => {
             employee.id === action.payload.id ? action.payload : employee
         )
       };
-    case DELETE_EMPLOYEE:
+    case actionTypes.DELETE_EMPLOYEE:
       return {
         ...state,
         employees: state.employees.filter(

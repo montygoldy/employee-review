@@ -4,7 +4,7 @@ import InputField from "../../Reusable/FormElements/InputField";
 import StarRatingComponent from "react-star-rating-component";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateFeedback } from "../../../redux/Actions/feedbackActions";
+import { updateFeedbackRequest } from "../../../redux/Actions/feedbackActions";
 
 class EditFeedbackModal extends Component {
   constructor(props) {
@@ -58,12 +58,12 @@ class EditFeedbackModal extends Component {
       employeeName,
       employeeId
     };
-    this.props.updateFeedback(updateData);
+    this.props.updateFeedbackRequest(updateData);
     this.props.onClose();
   };
 
   //Updating the state before mounting with user info
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       pro: this.props.pro,
       con: this.props.con,
@@ -154,10 +154,10 @@ EditFeedbackModal.propTypes = {
   con: PropTypes.string.isRequired,
   comments: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
-  updateFeedback: PropTypes.func.isRequired
+  updateFeedbackRequest: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { updateFeedback }
+  { updateFeedbackRequest }
 )(EditFeedbackModal);

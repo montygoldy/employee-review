@@ -3,7 +3,7 @@ import InputField from "../../Reusable/FormElements/InputField";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateEmployee } from "../../../redux/Actions/employeeActions";
+import { updateEmployeeRequest } from "../../../redux/Actions/employeeActions";
 
 class EditEmployeeModal extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class EditEmployeeModal extends Component {
       dateOfJoining,
       id
     };
-    this.props.updateEmployee(updateData);
+    this.props.updateEmployeeRequest(updateData);
     this.props.onClose();
   };
 
@@ -127,10 +127,10 @@ EditEmployeeModal.propTypes = {
   employeeId: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
-  updateEmployee: PropTypes.func.isRequired
+  updateEmployeeRequest: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { updateEmployee }
+  { updateEmployeeRequest }
 )(EditEmployeeModal);
