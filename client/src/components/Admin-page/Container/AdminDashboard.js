@@ -14,6 +14,7 @@ import HeadInfo from "../Components/HeadInfo";
 import FeedbackList from "../Components/FeedbackList";
 import PropTypes from "prop-types";
 import Loader from "../../Reusable/Loader";
+import * as selectors from "../../../redux/Selectors/EmployeeFeedback";
 
 class AdminDashboard extends Component {
   state = {
@@ -109,8 +110,8 @@ AdminDashboard.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  employeeList: state.employee,
-  feedbackList: state.feedback,
+  employeeList: selectors.EmployeeSelector(state),
+  feedbackList: selectors.FeedbackSelector(state),
   userList: state.auth
 });
 

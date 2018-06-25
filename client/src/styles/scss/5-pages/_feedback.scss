@@ -25,7 +25,8 @@
       padding: 2rem;
     }
   }
-  .userDetails {
+  .userDetails,
+  .userFeedback {
     margin-bottom: 3rem;
     flex: 0 0 35%;
     .wrapper {
@@ -93,6 +94,21 @@
     }
     .submit-button {
       margin: 2rem 0;
+    }
+  }
+  .userFeedback {
+    flex: 1;
+    margin-left: 2%;
+    &__info {
+      @include respond(tab-port) {
+        flex: 0 0 100%;
+      }
+      .title {
+        flex: 0 0 22% !important;
+      }
+      .detail {
+        flex: 0 0 74% !important;
+      }
     }
   }
 }

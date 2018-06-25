@@ -4,7 +4,7 @@ import EmployeeList from "../Components/EmployeeList";
 import { getEmployeesRequest } from "../../../redux/Actions/employeeActions";
 import PropTypes from "prop-types";
 import Loader from "../../Reusable/Loader";
-
+import * as selectors from "../../../redux/Selectors/EmployeeFeedback";
 class EmployeeDashboard extends Component {
   componentDidMount() {
     this.props.getEmployeesRequest();
@@ -28,7 +28,7 @@ EmployeeDashboard.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  employeeList: state.employee
+  employeeList: selectors.EmployeeSelector(state)
 });
 
 export default connect(
