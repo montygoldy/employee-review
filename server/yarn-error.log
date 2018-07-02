@@ -1,0 +1,39 @@
+Arguments: 
+  /Users/montygoldy/.nvm/versions/node/v9.3.0/bin/node /Users/montygoldy/.yarn/bin/yarn.js add express morgan body-parser
+
+PATH: 
+  /Users/montygoldy/.rvm/gems/ruby-2.3.4/bin:/Users/montygoldy/.rvm/gems/ruby-2.3.4@global/bin:/Users/montygoldy/.rvm/rubies/ruby-2.3.4/bin:/Users/montygoldy/.yarn/bin:/Users/montygoldy/.config/yarn/global/node_modules/.bin:/Users/montygoldy/.nvm/versions/node/v9.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/montygoldy/.rvm/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  9.3.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
+      at errnoException (dns.js:55:10)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:26)
+
+npm manifest: 
+  {
+    "name": "revme",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
