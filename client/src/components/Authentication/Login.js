@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import InputField from "../Reusable/FormElements/InputField";
-import { loginUser } from "../../redux/Actions/authActions";
+import { loginUserRequest } from "../../redux/Actions/authActions";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import history from "../Routes/History";
+
 class Login extends Component {
   state = {
     email: "",
@@ -23,10 +25,25 @@ class Login extends Component {
       email,
       password
     };
-    this.props.loginUser(data);
-    this.props.history.push("/review");
+    this.props.loginUserRequest(data);
   };
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      history.push("/review");
+    }
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.errors) {
+      return {
+        errors: nextProps.errors
+      };
+    }
+  }
+
   render() {
+    const { errors } = this.state;
     return (
       <div className="container">
         <div className="auth flexCenter">
@@ -40,6 +57,7 @@ class Login extends Component {
               type="text"
               value={this.state.email}
               onChange={this.onChange}
+              error={errors.email}
             />
             <InputField
               name="password"
@@ -47,6 +65,7 @@ class Login extends Component {
               type="password"
               value={this.state.password}
               onChange={this.onChange}
+              error={errors.password}
             />
             <button className="button button--dark" onClick={this.onSubmit}>
               Sign In Now
@@ -58,7 +77,18 @@ class Login extends Component {
   }
 }
 
+Login.propTypes = {
+  errors: PropTypes.object,
+  loginUserRequest: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
 export default connect(
-  null,
-  { loginUser }
-)(withRouter(Login));
+  mapStateToProps,
+  { loginUserRequest }
+)(Login);

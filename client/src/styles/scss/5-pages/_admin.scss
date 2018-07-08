@@ -66,6 +66,7 @@
     display: flex;
     justify-content: space-between;
     &__table {
+      width: 100%;
       .add-employee {
         font-size: 1.4rem !important;
         margin-bottom: 1rem;

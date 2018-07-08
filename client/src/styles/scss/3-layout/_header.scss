@@ -21,6 +21,13 @@
     margin-right: 2rem;
     font-weight: 500;
     font-size: 1.5rem;
+
+    .username{
+      text-transform: capitalize;
+      font-family: $primary-font;
+      font-size: 1.6rem;
+      color: $text-color-dark;
+    }
   }
   &__nav-link {
     font-size: 1.5rem;

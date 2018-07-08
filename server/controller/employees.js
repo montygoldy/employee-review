@@ -8,7 +8,9 @@ module.exports = {
   getAllEmployees: async (req, res) => {
     const errors = {};
     try {
-      const employees = await Employee.find();
+      const employees = await Employee.find().sort({
+        _id: -1,
+      });
       return res.json(employees);
     } catch (error) {
       errors.noEmployees = 'No employees found';

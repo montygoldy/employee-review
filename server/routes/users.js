@@ -22,4 +22,9 @@ router.get('/current', passport.authenticate('jwt', {
   session: false,
 }), UserController.currentUser);
 
+// @route  Get @api/users/
+// @desc   GET All users
+// @access PRIVATE
+router.get('/', passport.authenticate('jwt', { session: false }), UserController.getUsers);
+
 module.exports = router;

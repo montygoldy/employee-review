@@ -92,7 +92,7 @@ module.exports = {
       // Check password
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        errors.password = 'Invalid Password';
+        errors.password = 'Password incorrect';
         return res.status(404).json(errors);
       }
 
@@ -119,6 +119,21 @@ module.exports = {
     } catch (error) {
       errors.password = 'Something went wrong';
       return res.status(400).json(errors);
+    }
+  },
+
+  getUsers: async (req, res) => {
+    const errors = {};
+    try {
+      const users = await User.find().sort({ name: -1 });
+      if (!users) {
+        errors.noUsers = 'No users found';
+        return res.status(400).json(errors);
+      }
+      return res.json(users);
+    } catch (err) {
+      errors.getUsersErrors = 'Unable to fetch users lists';
+      return res.status(404).json(errors);
     }
   },
 

@@ -3,10 +3,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const cors = require('cors');
 
 // Routes import
 const users = require('./routes/users');
 const employees = require('./routes/employees');
+const feedbacks = require('./routes/feedbacks');
 
 const app = express();
 
@@ -19,6 +21,7 @@ mongoose
   .then(() => console.log('MongoDB connected')).catch(err => console.log(err));
 
 // Middlewares
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
   extended: false,
@@ -31,6 +34,7 @@ require('./services/passport');
 // Routes
 app.use('/api/users', users);
 app.use('/api/employees', employees);
+app.use('/api/feedbacks', feedbacks);
 
 // Start the server
 const port = process.env.PORT || 3001;

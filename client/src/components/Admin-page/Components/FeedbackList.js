@@ -5,8 +5,8 @@ import FeedbackItem from "./FeedbackItem";
 const FeedbackList = ({ feedbacks }) => {
   const feedbackInfo = feedbacks.map(feedback => (
     <FeedbackItem
-      key={feedback.id}
-      id={feedback.id}
+      key={feedback._id}
+      id={feedback._id}
       employeeId={feedback.employeeId}
       pro={feedback.pro}
       con={feedback.con}

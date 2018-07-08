@@ -5,7 +5,7 @@ import EmployeeItem from "./EmployeeItem";
 const EmployeeList = ({ employees }) => {
   const employeeInfo = employees.map(employee => (
     <EmployeeItem
-      key={employee.id}
+      key={employee._id}
       name={employee.name}
       title={employee.title}
       dateOfJoining={employee.dateOfJoining}

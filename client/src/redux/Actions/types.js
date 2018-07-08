@@ -30,7 +30,16 @@ export const UPDATE_FEEDBACK = "UPDATE_FEEDBACK";
 
 //User Constants
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const GET_USERS_REQUEST = "GET_USERS_REQUEST";
 export const GET_USERS = "GET_USERS";
 
 //Errors
 export const GET_ERRORS = "GET_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+
+// Auth constants
+export const REGISTER_USER_REQUEST = "REGISTER_USER_REQUEST";
+export const REGISTER_USER = "REGISTER_USER";
+export const LOGIN_USER_REQUEST = "LOGIN_USER_REQUEST";
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGOUT_USER = "LOGOUT_USER";

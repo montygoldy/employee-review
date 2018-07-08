@@ -79,7 +79,7 @@ FeedbackItem.propTypes = {
   con: PropTypes.string.isRequired,
   comments: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.string.isRequired
 };
 
 export default FeedbackItem;

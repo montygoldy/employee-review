@@ -5,7 +5,7 @@ import {
   addEmployeeRequest,
   deleteEmployee
 } from "../../../redux/Actions/employeeActions";
-import { getUsers } from "../../../redux/Actions/authActions";
+import { getUsersRequest } from "../../../redux/Actions/authActions";
 import { getFeedbacksRequest } from "../../../redux/Actions/feedbackActions";
 import AddEmployeeModal from "../Components/AddEmployeeModal";
 import Modal from "react-responsive-modal";
@@ -35,7 +35,7 @@ class AdminDashboard extends Component {
   componentDidMount() {
     this.props.getEmployeesRequest();
     this.props.getFeedbacksRequest();
-    this.props.getUsers();
+    this.props.getUsersRequest();
   }
 
   render() {
@@ -106,7 +106,7 @@ AdminDashboard.propTypes = {
   deleteEmployee: PropTypes.func.isRequired,
   getEmployeesRequest: PropTypes.func.isRequired,
   getFeedbacksRequest: PropTypes.func.isRequired,
-  getUsers: PropTypes.func.isRequired
+  getUsersRequest: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -122,6 +122,6 @@ export default connect(
     addEmployeeRequest,
     deleteEmployee,
     getFeedbacksRequest,
-    getUsers
+    getUsersRequest
   }
 )(AdminDashboard);

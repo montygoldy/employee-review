@@ -7,7 +7,7 @@ const EmployeeList = ({ employees }) => {
     <div className="article-group">
       {employees.map(employee => (
         <EmployeeItem
-          key={employee.id}
+          key={employee._id}
           title={employee.title}
           name={employee.name}
           image={employee.image}
