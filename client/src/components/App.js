@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import "../styles/css/main.css";
 import Routes from "./Routes/Routes";
+import { PersistGate } from "redux-persist/lib/integration/react";
 import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "../redux/Store";
+import { persistor, store } from "../redux/Store";
 import history from "./Routes/History";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../redux/utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../redux/Actions/authActions";
+import Loader from "./Reusable/Loader";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -35,9 +37,11 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={history}>
-          <Routes />
-        </Router>
+        <PersistGate loading={<Loader />} persistor={persistor}>
+          <Router history={history}>
+            <Routes />
+          </Router>
+        </PersistGate>
       </Provider>
     );
   }

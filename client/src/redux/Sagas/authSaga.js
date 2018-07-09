@@ -1,8 +1,9 @@
-import { takeLatest, call, put } from "redux-saga/effects";
+import { takeLatest, call, put, all } from "redux-saga/effects";
 import * as actionTypes from "../Actions/types";
 import api from "../../Api";
 import * as actions from "../Actions/authActions";
 import { getFeedbacksRequest } from "../Actions/feedbackActions";
+import { getEmployeesRequest } from "../Actions/employeeActions";
 import history from "../../components/Routes/History";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
@@ -30,11 +31,22 @@ function* loginSaga(action) {
     const decoded = jwt_decode(userData.token);
     //Set Current User
     yield put(actions.setCurrentUser(decoded));
-    yield call(getFeedbacksRequest());
+
+    // Login actions
+    yield call(loginActions);
+
     history.push("/review");
   } catch (err) {
     yield put(actions.loginUserErrors(err.response.data));
   }
+}
+
+function* loginActions(action) {
+  yield all([
+    put(getFeedbacksRequest()),
+    call(getUsersSaga),
+    put(getEmployeesRequest())
+  ]);
 }
 
 function* logoutSaga(action) {

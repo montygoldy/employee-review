@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER, GET_USERS } from "../Actions/types";
+import { SET_CURRENT_USER, GET_USERS, LOGOUT_USER } from "../Actions/types";
 import isEmpty from "../utils/isEmpty";
 
 const initialState = {
@@ -22,6 +22,8 @@ export default (state = initialState, action) => {
         ...state,
         users: action.payload
       };
+    case LOGOUT_USER:
+      return {};
     default:
       return state;
   }

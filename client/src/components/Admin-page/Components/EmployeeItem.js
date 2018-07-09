@@ -85,7 +85,7 @@ EmployeeItem.propTypes = {
   employeeId: PropTypes.string.isRequired,
   dateOfJoining: PropTypes.string.isRequired,
   deleteEmployee: PropTypes.func.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   getEmployeeDetails: PropTypes.func.isRequired
 };
 

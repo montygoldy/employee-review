@@ -25,7 +25,6 @@ const EmployeeSchema = new Schema({
   },
   image: {
     type: String,
-    required: true,
   },
   dateOfJoining: {
     type: Date,

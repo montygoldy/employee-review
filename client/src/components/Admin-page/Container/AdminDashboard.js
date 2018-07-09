@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  getEmployeesRequest,
   addEmployeeRequest,
   deleteEmployee
 } from "../../../redux/Actions/employeeActions";
-import { getUsersRequest } from "../../../redux/Actions/authActions";
-import { getFeedbacksRequest } from "../../../redux/Actions/feedbackActions";
 import AddEmployeeModal from "../Components/AddEmployeeModal";
 import Modal from "react-responsive-modal";
 import EmployeeList from "../Components/EmployeeList";
@@ -30,13 +27,6 @@ class AdminDashboard extends Component {
   addNewEmployee = employeeData => {
     this.props.addEmployeeRequest(employeeData);
   };
-
-  //Dispatching action to get all the employees and feedback on mount
-  componentDidMount() {
-    this.props.getEmployeesRequest();
-    this.props.getFeedbacksRequest();
-    this.props.getUsersRequest();
-  }
 
   render() {
     const {
@@ -102,26 +92,21 @@ class AdminDashboard extends Component {
 AdminDashboard.propTypes = {
   employeeList: PropTypes.object.isRequired,
   feedbackList: PropTypes.object.isRequired,
+  userList: PropTypes.object.isRequired,
   addEmployeeRequest: PropTypes.func.isRequired,
-  deleteEmployee: PropTypes.func.isRequired,
-  getEmployeesRequest: PropTypes.func.isRequired,
-  getFeedbacksRequest: PropTypes.func.isRequired,
-  getUsersRequest: PropTypes.func.isRequired
+  deleteEmployee: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   employeeList: selectors.EmployeeSelector(state),
   feedbackList: selectors.FeedbackSelector(state),
-  userList: state.auth
+  userList: selectors.UserSelector(state)
 });
 
 export default connect(
   mapStateToProps,
   {
-    getEmployeesRequest,
     addEmployeeRequest,
-    deleteEmployee,
-    getFeedbacksRequest,
-    getUsersRequest
+    deleteEmployee
   }
 )(AdminDashboard);

@@ -6,7 +6,6 @@ const validateEmployeeInput = (data) => {
   data.employeeId = !isEmpty(data.employeeId) ? data.employeeId : '';
   data.name = !isEmpty(data.name) ? data.name : '';
   data.title = !isEmpty(data.title) ? data.title : '';
-  data.image = !isEmpty(data.image) ? data.image : '';
   data.funFact = !isEmpty(data.funFact) ? data.funFact : '';
   data.dateOfJoining = !isEmpty(data.dateOfJoining) ? data.dateOfJoining : '';
 
@@ -20,9 +19,6 @@ const validateEmployeeInput = (data) => {
 
   if (Validator.isEmpty(data.title)) {
     errors.title = 'Title field is required';
-  }
-  if (Validator.isEmpty(data.image)) {
-    errors.image = 'Image field is required';
   }
 
   if (Validator.isEmpty(data.funFact)) {

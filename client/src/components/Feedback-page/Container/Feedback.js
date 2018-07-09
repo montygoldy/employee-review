@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import FeedbackForm from "../Components/FeedbackForm";
 import { connect } from "react-redux";
 import { getEmployeeDetailsRequest } from "../../../redux/Actions/employeeActions";
-import { getFeedbacksRequest } from "../../../redux/Actions/feedbackActions";
 import { addFeedbackRequest } from "../../../redux/Actions/feedbackActions";
 import PropTypes from "prop-types";
 import * as selectors from "../../../redux/Selectors/EmployeeFeedback";
@@ -18,14 +17,13 @@ class Feedback extends Component {
 
   componentDidMount = () => {
     this.props.getEmployeeDetailsRequest(this.props.match.params.id);
-    this.props.getFeedbacksRequest();
   };
 
   render() {
     const {
-      employeeList: { employee },
-      userFeedback
+      employeeList: { employee }
     } = this.props;
+    console.log(employee);
     return (
       <div className="container">
         <div className="feedback-page">
@@ -37,15 +35,13 @@ class Feedback extends Component {
           </div>
           <div className="wrapper flexFit">
             <EmployeeInfo employee={employee} />
-            {userFeedback ? (
-              <UserFeedback userFeedback={userFeedback[0]} />
-            ) : (
+            {
               <FeedbackForm
                 addFeedback={this.addFeedback}
                 employeeId={employee.employeeId}
                 employeeName={employee.name}
               />
-            )}
+            }
           </div>
         </div>
       </div>
@@ -55,17 +51,15 @@ class Feedback extends Component {
 
 Feedback.propTypes = {
   employeeList: PropTypes.object.isRequired,
-  addFeedbackRequest: PropTypes.func.isRequired,
-  getEmployeeDetailsRequest: PropTypes.func.isRequired
+  addFeedbackRequest: PropTypes.func.isRequired
 };
 
 const mapStatetoProps = state => ({
   employeeList: selectors.EmployeeSelector(state),
-  feedbackList: selectors.FeedbackSelector(state),
   userFeedback: selectors.UserFeedbackSelector(state)
 });
 
 export default connect(
   mapStatetoProps,
-  { getEmployeeDetailsRequest, addFeedbackRequest, getFeedbacksRequest }
+  { getEmployeeDetailsRequest, addFeedbackRequest }
 )(Feedback);

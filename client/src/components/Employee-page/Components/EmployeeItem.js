@@ -28,9 +28,13 @@ const EmployeeItem = ({ title, name, image, funFact, employeeId }) => {
 EmployeeItem.propTypes = {
   title: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   funFact: PropTypes.string.isRequired,
   employeeId: PropTypes.string.isRequired
+};
+
+EmployeeItem.defaultProps = {
+  image: "http://via.placeholder.com/300x200"
 };
 
 export default EmployeeItem;
