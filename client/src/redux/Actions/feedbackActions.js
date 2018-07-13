@@ -37,9 +37,9 @@ export const updateFeedbackRequest = newFeedbackData => ({
   payload: newFeedbackData
 });
 
-export const updateFeedback = newFeedbackData => ({
+export const updateFeedback = updatedData => ({
   type: actionTypes.UPDATE_FEEDBACK,
-  payload: newFeedbackData
+  payload: updatedData
 });
 
 export const updateFeedbackErrors = errors => ({

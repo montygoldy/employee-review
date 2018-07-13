@@ -1,5 +1,36 @@
 import * as actionTypes from "./types";
 
+//Assign Employees
+export const assignEmployeesRequest = data => ({
+  type: actionTypes.ASSIGN_EMPLOYEES_REQUEST,
+  payload: data
+});
+
+export const assignEmployees = selectedEmployees => ({
+  type: actionTypes.ASSIGN_EMPLOYEES,
+  payload: selectedEmployees
+});
+
+export const assignEmployeesErrors = errors => ({
+  type: actionTypes.GET_ERRORS,
+  payload: errors
+});
+
+// Get Assign Employees
+export const getAssignEmployeesRequest = () => ({
+  type: actionTypes.GET_ASSIGN_EMPLOYEES_REQUEST
+});
+
+export const getAssignEmployees = selectedIds => ({
+  type: actionTypes.GET_ASSIGN_EMPLOYEES,
+  payload: selectedIds
+});
+
+export const getAssignEmployeesErrors = errors => ({
+  type: actionTypes.GET_ERRORS,
+  payload: errors
+});
+
 //Add Employee
 export const addEmployeeRequest = data => ({
   type: actionTypes.ADD_EMPLOYEE_REQUEST,
@@ -69,12 +100,12 @@ export const deleteEmployeeRequest = employeeId => ({
   payload: employeeId
 });
 
-export const deleteEmployee = employeesId => ({
+export const deleteEmployee = employeeId => ({
   type: actionTypes.DELETE_EMPLOYEE,
-  payload: employeesId
+  payload: employeeId
 });
 
-export const deleteEmployeeErrors = employeesId => ({
+export const deleteEmployeeErrors = errors => ({
   type: actionTypes.GET_ERRORS,
-  payload: employeesId
+  payload: errors
 });

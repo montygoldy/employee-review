@@ -7,7 +7,6 @@ const validateFeedbackInput = (data) => {
   data.pro = !isEmpty(data.pro) ? data.pro : '';
   data.con = !isEmpty(data.con) ? data.con : '';
   data.comments = !isEmpty(data.comments) ? data.comments : '';
-  data.rating = !isEmpty(data.rating) ? data.rating : 0;
 
   if (Validator.isEmpty(data.pro)) {
     errors.pro = 'Pro field is required';
@@ -19,10 +18,6 @@ const validateFeedbackInput = (data) => {
 
   if (Validator.isEmpty(data.comments)) {
     errors.comments = 'Comments field is required';
-  }
-
-  if (Validator.isEmpty(data.rating)) {
-    errors.rating = 'Rating field is required';
   }
 
   return {

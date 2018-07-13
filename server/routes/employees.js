@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 
 const EmployeeController = require('../controller/employees');
+const AssignEmployeeController = require('../controller/assignEmployees');
 
 const passportJWT = passport.authenticate('jwt', {
   session: false,
@@ -24,6 +25,16 @@ router.get('/:employeeId', passportJWT, EmployeeController.getEmployeeById);
 // @desc   Add employee route
 // @access PRIVATE
 router.post('/', passportJWT, EmployeeController.addEmployee);
+
+// @route  POST @api/employess/assign
+// @desc   Assign employees to review route
+// @access PRIVATE
+router.post('/assign', passportJWT, AssignEmployeeController.assignEmployees);
+
+// @route  GET @api/employess/assign
+// @desc   GET Assign employees to review route
+// @access PRIVATE
+router.get('/assign/all', passportJWT, AssignEmployeeController.getAssignEmployees);
 
 // @route  PUT @api/employess/:id
 // @desc   EDIT employee route

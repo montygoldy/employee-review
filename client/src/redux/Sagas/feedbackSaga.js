@@ -10,7 +10,7 @@ function* addFeedbackSaga(action) {
     yield put(actions.addFeedback(feedback));
     history.push("/review");
   } catch (err) {
-    yield put(actions.addFeedbackErrors(err.response.data.errors));
+    yield put(actions.addFeedbackErrors(err.response.data));
   }
 }
 
@@ -19,7 +19,7 @@ function* getFeedbacksSaga() {
     const feedbacks = yield call(api.feedback.all);
     yield put(actions.getFeedbacks(feedbacks));
   } catch (err) {
-    yield put(actions.getFeedbacksErrors(err.response.data.errors));
+    yield put(actions.getFeedbacksErrors(err.response.data));
   }
 }
 
@@ -28,7 +28,7 @@ function* updateFeedbackSaga(action) {
     const updateData = yield call(api.feedback.edit, action.payload);
     yield put(actions.updateFeedback(updateData));
   } catch (err) {
-    yield put(actions.updateFeedbackErrors(err.response.data.errors));
+    yield put(actions.updateFeedbackErrors(err.response.data));
   }
 }
 
@@ -37,7 +37,7 @@ function* getFeedbackSaga(action) {
     const feedback = yield call(api.feedback.feedbackInfo, action.payload);
     yield put(actions.getFeedback(feedback));
   } catch (err) {
-    yield put(actions.getFeedbackErrors(err.response.data.errors));
+    yield put(actions.getFeedbackErrors(err.response.data));
   }
 }
 

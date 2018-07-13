@@ -5,7 +5,23 @@ export const FeedbackSelector = state => state.feedback;
 export const UserSelector = state => state.auth;
 
 export const UserFeedbackSelector = createSelector(
-  [FeedbackSelector],
-  feedback =>
-    feedback.feedbacks.filter(feedback => feedback.reviewerId === "22222222")
+  [FeedbackSelector, EmployeeSelector, UserSelector],
+  (feedback, employee, auth) =>
+    feedback.feedbacks.filter(
+      feedback =>
+        feedback.reviewerId === auth.user.id &&
+        feedback.employeeId === employee.employee.employeeId
+    )
+);
+
+export const AssignedUserSelector = createSelector(
+  [EmployeeSelector],
+  employee => {
+    // destructuring the assigned emloyees array
+    const data = employee.assignedEmployees;
+
+    return employee.employees.filter(({ employeeId }) =>
+      data.includes(employeeId)
+    );
+  }
 );

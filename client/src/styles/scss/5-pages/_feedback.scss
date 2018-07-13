@@ -78,7 +78,15 @@
     flex: 0 0 62%;
     .rating {
       margin: 2rem 0;
+      flex-wrap: wrap;
     }
+
+    .invalid-feedback {
+      text-align: center;
+      flex: 1;
+      margin-top: 1rem;
+    }
+
     .input-group {
       justify-content: space-between;
       label {
@@ -110,5 +118,8 @@
         flex: 0 0 74% !important;
       }
     }
+  }
+  .invalid-feedback{
+    text-align: center;
   }
 }

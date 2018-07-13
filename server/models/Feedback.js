@@ -34,6 +34,10 @@ const FeedbackSchema = new Schema({
     type: Number,
     required: true,
   },
+  employeeId: {
+    type: String,
+    required: true,
+  },
 });
 
 // Create model

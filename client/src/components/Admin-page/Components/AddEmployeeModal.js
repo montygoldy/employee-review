@@ -53,6 +53,7 @@ class AddEmployeeModal extends Component {
   };
 
   render() {
+    const { errors } = this.props;
     return (
       <div className="modal-popup addemployeeModal">
         <h4 className="semi-heading">Add Employee</h4>
@@ -64,6 +65,7 @@ class AddEmployeeModal extends Component {
             value={this.state.name}
             onChange={this.handleChange}
             label={false}
+            error={errors.name}
           />
           <InputField
             name="title"
@@ -72,6 +74,7 @@ class AddEmployeeModal extends Component {
             value={this.state.title}
             onChange={this.handleChange}
             label={false}
+            error={errors.title}
           />
           <TextareaField
             name="funFact"
@@ -79,6 +82,7 @@ class AddEmployeeModal extends Component {
             value={this.state.funFact}
             onChange={this.handleChange}
             label={false}
+            error={errors.funFact}
           />
           <InputField
             name="image"
@@ -95,14 +99,16 @@ class AddEmployeeModal extends Component {
             value={this.state.employeeId}
             onChange={this.handleChange}
             label={false}
+            error={errors.employeeId}
           />
           <InputField
             name="dateOfJoining"
-            placeholder="Date of Joining dd/mm/yyyy"
+            placeholder="Date of Joining mm/dd/yyyy"
             type="text"
             value={this.state.dateOfJoining}
             onChange={this.handleChange}
             label={false}
+            error={errors.dateOfJoining}
           />
           <div className="flexCenter">
             <button className="button button--dark" onClick={this.handleSubmit}>

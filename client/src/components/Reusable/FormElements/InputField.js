@@ -18,6 +18,7 @@ const InputField = ({
             <label>{name}</label>
           </div>
         )}
+
         <input
           placeholder={placeholder}
           name={name}

@@ -12,9 +12,7 @@ const FeedbackList = ({ feedbacks }) => {
       con={feedback.con}
       comments={feedback.comments}
       rating={feedback.rating}
-      reviewerId={feedback.reviewerId}
       reviewerName={feedback.reviewerName}
-      employeeName={feedback.employeeName}
     />
   ));
 
@@ -23,7 +21,6 @@ const FeedbackList = ({ feedbacks }) => {
       <thead>
         <tr>
           <th>Reviewer Name</th>
-          <th>Employee Name</th>
           <th>Con</th>
           <th>Pro</th>
           <th>Comments</th>

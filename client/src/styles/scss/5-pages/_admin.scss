@@ -61,6 +61,7 @@
       }
     }
   }
+  .assign_employees,
   .employees,
   .feedback {
     display: flex;
@@ -97,6 +98,37 @@
           &:last-child {
             color: tomato;
           }
+        }
+      }
+    }
+  }
+
+  .assign_employees{
+    .invalid-feedback{
+      margin-bottom: 0;
+    }
+    .flexFit{
+      @include respond(phone) {
+        flex-direction: column;
+      }
+      .select{
+        flex: 0 0 80%;
+        @include respond(tab-land){
+          flex: 0 0 75%;
+        }
+        @include respond(tab-port) {
+          flex: 0 0 70%;
+        }
+        @include respond(phone) {
+          flex: 1;
+          width: 100%;
+        }
+      }
+      button{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        @include respond(phone) {
+          margin-top: 1.5rem;
         }
       }
     }

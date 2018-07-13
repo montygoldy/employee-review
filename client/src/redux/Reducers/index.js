@@ -18,7 +18,7 @@ export default (state, action) => {
     Object.keys(state).forEach(key => {
       storage.removeItem(`persist:${key}`);
     });
-    state = undefined;
+    state = {};
   }
   return appReducer(state, action);
 };

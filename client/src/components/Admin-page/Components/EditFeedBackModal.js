@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import TextareaField from "../../Reusable/FormElements/TextareaField";
-import InputField from "../../Reusable/FormElements/InputField";
 import StarRatingComponent from "react-star-rating-component";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -10,14 +9,14 @@ class EditFeedbackModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pro: "",
-      con: "",
-      comments: "",
-      rating: 0,
-      reviewerId: "",
-      reviewerName: "",
-      employeeName: "",
-      employeeId: ""
+      pro: this.props.pro,
+      con: this.props.con,
+      comments: this.props.comments,
+      rating: this.props.rating,
+      id: this.props.id,
+      employeeId: this.props.employeeId,
+      reviewName: this.props.reviewName,
+      errors: {}
     };
   }
 
@@ -41,42 +40,35 @@ class EditFeedbackModal extends Component {
       con,
       comments,
       rating,
-      reviewerId,
-      reviewerName,
-      employeeName,
+      id,
+      reviewName,
       employeeId
     } = this.state;
-    const { id } = this.props;
+
     const updateData = {
       pro,
       con,
       comments,
       rating,
       id,
-      reviewerId,
-      reviewerName,
-      employeeName,
+      reviewName,
       employeeId
     };
     this.props.updateFeedbackRequest(updateData);
     this.props.onClose();
   };
 
-  //Updating the state before mounting with user info
-  componentDidMount() {
-    this.setState({
-      pro: this.props.pro,
-      con: this.props.con,
-      comments: this.props.comments,
-      rating: this.props.rating,
-      reviewerId: this.props.reviewerId,
-      reviewerName: this.props.reviewerName,
-      employeeName: this.props.employeeName,
-      employeeId: this.props.employeeId
-    });
+  //Getting Errors
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.errors) {
+      return {
+        errors: nextProps.errors
+      };
+    }
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="modal-popup">
         <h4 className="semi-heading">Edit Feedback</h4>
@@ -86,58 +78,33 @@ class EditFeedbackModal extends Component {
             placeholder="Positive Points"
             value={this.state.pro}
             onChange={this.handleChange}
+            error={errors.pro}
           />
           <TextareaField
             name="con"
             placeholder="Negative Points"
             value={this.state.con}
             onChange={this.handleChange}
+            error={errors.con}
           />
           <TextareaField
             name="comments"
             placeholder="Anything you would like to add"
             value={this.state.comments}
             onChange={this.handleChange}
+            error={errors.comments}
           />
           <div className="input-group rating">
             <label>Rating</label>
             <div className="star-group">
               <StarRatingComponent
-                name="Employee Rating"
+                name="rating"
                 starCount={10}
                 value={this.state.rating}
                 onStarClick={this.onStarClick}
               />
             </div>
           </div>
-          <InputField
-            name="employeeName"
-            placeholder="Employee Name"
-            type="text"
-            value={this.state.employeeName}
-            onChange={this.handleChange}
-          />
-          <InputField
-            name="employeeId"
-            placeholder="Employee Id"
-            type="text"
-            value={this.state.employeeId}
-            onChange={this.handleChange}
-          />
-          <InputField
-            name="reviewerName"
-            placeholder="Reviewer Name"
-            type="text"
-            value={this.state.reviewerName}
-            onChange={this.handleChange}
-          />
-          <InputField
-            name="reviewerId"
-            placeholder="Reviewer Id"
-            type="text"
-            value={this.state.reviewerId}
-            onChange={this.handleChange}
-          />
           <div className="flexCenter">
             <button className="button button--dark" onClick={this.handleSubmit}>
               <i className="far fa-comments" />Edit Feedback
@@ -154,10 +121,16 @@ EditFeedbackModal.propTypes = {
   con: PropTypes.string.isRequired,
   comments: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
-  updateFeedbackRequest: PropTypes.func.isRequired
+  id: PropTypes.string.isRequired,
+  updateFeedbackRequest: PropTypes.func.isRequired,
+  errors: PropTypes.object
 };
 
+const mapStateToProps = state => ({
+  errors: state.errors
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { updateFeedbackRequest }
 )(EditFeedbackModal);

@@ -3,7 +3,10 @@ import * as actionTypes from "../Actions/types";
 import api from "../../Api";
 import * as actions from "../Actions/authActions";
 import { getFeedbacksRequest } from "../Actions/feedbackActions";
-import { getEmployeesRequest } from "../Actions/employeeActions";
+import {
+  getAssignEmployeesRequest,
+  getEmployeesRequest
+} from "../Actions/employeeActions";
 import history from "../../components/Routes/History";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
@@ -45,7 +48,8 @@ function* loginActions(action) {
   yield all([
     put(getFeedbacksRequest()),
     call(getUsersSaga),
-    put(getEmployeesRequest())
+    put(getEmployeesRequest()),
+    put(getAssignEmployeesRequest())
   ]);
 }
 
@@ -56,6 +60,7 @@ function* logoutSaga(action) {
     // Remove auth header
     setAuthToken(false);
     // Set the current User to emply opbject which will also set isAuthenticated to false
+
     yield put(actions.setCurrentUser({}));
   } catch (err) {
     yield put(actions.logoutUserErrors(err.response.data));

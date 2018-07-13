@@ -9,12 +9,13 @@ class EditEmployeeModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      title: "",
-      funFact: "",
-      image: "",
-      employeeId: "",
-      dateOfJoining: ""
+      name: this.props.name,
+      title: this.props.title,
+      funFact: this.props.funFact,
+      image: this.props.image,
+      employeeId: this.props.employeeId,
+      dateOfJoining: this.props.dateOfJoining,
+      errors: {}
     };
   }
 
@@ -33,8 +34,7 @@ class EditEmployeeModal extends Component {
       funFact,
       image,
       employeeId,
-      dateOfJoining,
-      id
+      dateOfJoining
     } = this.state;
     const updateData = {
       name,
@@ -42,27 +42,23 @@ class EditEmployeeModal extends Component {
       funFact,
       image,
       employeeId,
-      dateOfJoining,
-      id
+      dateOfJoining
     };
     this.props.updateEmployeeRequest(updateData);
     this.props.onClose();
   };
 
-  //Updating the state before mounting with user info
-  componentWillMount() {
-    this.setState({
-      name: this.props.name,
-      title: this.props.title,
-      funFact: this.props.funFact,
-      image: this.props.image,
-      employeeId: this.props.employeeId,
-      dateOfJoining: this.props.dateOfJoining,
-      id: this.props.id
-    });
+  //Errors
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.errors) {
+      return {
+        errors: nextProps.errors
+      };
+    }
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="modal-popup">
         <h4 className="semi-heading">Edit Employee</h4>
@@ -73,6 +69,7 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.name}
             onChange={this.handleChange}
+            error={errors.name}
           />
           <InputField
             name="title"
@@ -80,12 +77,14 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.title}
             onChange={this.handleChange}
+            error={errors.title}
           />
           <TextareaField
             name="funFact"
             placeholder="Employee Info"
             value={this.state.funFact}
             onChange={this.handleChange}
+            error={errors.funFact}
           />
           <InputField
             name="image"
@@ -100,6 +99,7 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.employeeId}
             onChange={this.handleChange}
+            error={errors.employeeId}
           />
           <InputField
             name="dateOfJoining"
@@ -107,6 +107,7 @@ class EditEmployeeModal extends Component {
             type="text"
             value={this.state.dateOfJoining}
             onChange={this.handleChange}
+            error={errors.dateOfJoining}
           />
           <div className="flexCenter">
             <button className="button button--dark" onClick={this.handleSubmit}>
@@ -125,12 +126,16 @@ EditEmployeeModal.propTypes = {
   funFact: PropTypes.string.isRequired,
   dateOfJoining: PropTypes.string.isRequired,
   employeeId: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
-  updateEmployeeRequest: PropTypes.func.isRequired
+  updateEmployeeRequest: PropTypes.func.isRequired,
+  errors: PropTypes.object
 };
 
+const mapStateToProps = state => ({
+  errors: state.errors
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { updateEmployeeRequest }
 )(EditEmployeeModal);

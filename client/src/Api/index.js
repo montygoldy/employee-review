@@ -16,6 +16,14 @@ export default {
         .then(response => response.data)
   },
   employee: {
+    addAssign: selectedEmployees =>
+      axios
+        .post("http://localhost:3001/api/employees/assign", selectedEmployees)
+        .then(response => response.data),
+    getAssign: () =>
+      axios
+        .get("http://localhost:3001/api/employees/assign/all")
+        .then(response => response.data[0].employeeId),
     add: employeeData =>
       axios
         .post("http://localhost:3001/api/employees", employeeData)
@@ -26,18 +34,21 @@ export default {
         .then(response => response.data),
     edit: data =>
       axios
-        .put(`http://localhost:3001/api/employees/${data.id}`, data)
+        .put(`http://localhost:3001/api/employees/${data.employeeId}`, data)
         .then(response => response.data),
     delete: id => axios.delete(`http://localhost:3001/api/employees/${id}`),
     getInfo: employeeId =>
       axios
         .get(`http://localhost:3001/api/employees/${employeeId}`)
-        .then(response => response.data[0])
+        .then(response => response.data)
   },
   feedback: {
     add: feedbackData =>
       axios
-        .post("http://localhost:3001/api/feedbacks", feedbackData)
+        .post(
+          `http://localhost:3001/api/feedbacks/${feedbackData.employeeId}`,
+          feedbackData
+        )
         .then(response => response.data),
     all: () =>
       axios
@@ -46,7 +57,7 @@ export default {
     edit: newFeedbackData =>
       axios
         .put(
-          `http://localhost:3004/api/feedbacks/${newFeedbackData.id}`,
+          `http://localhost:3001/api/feedbacks/${newFeedbackData.id}`,
           newFeedbackData
         )
         .then(response => response.data),

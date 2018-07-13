@@ -21,7 +21,7 @@ router.get('/', passportJWT, FeedbackController.getAllFeedbacks);
 // @route  POST @api/feedbacks/
 // @desc   Add a Feedback route
 // @access PRIVATE
-router.post('/', passportJWT, FeedbackController.addFeedback);
+router.post('/:employeeId', passportJWT, FeedbackController.addFeedback);
 
 // @route  PUT @api/feedbacks/employeeId
 // @desc   Edit a Feedback route

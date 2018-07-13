@@ -366,6 +366,15 @@ footer {
     line-height: 2.5;
     font-family: "Fjalla One", sans-serif;
     letter-spacing: 1px; }
+  .input-group time {
+    width: 75%;
+    font-weight: 300;
+    border: none;
+    width: 75%;
+    font-size: 1.5rem;
+    background: #F5FAFF;
+    padding: 1rem;
+    color: #475C8A; }
   .input-group__input, .input-group__textarea {
     font-weight: 300;
     border: none;
@@ -688,21 +697,26 @@ section.employee-review {
           text-align: center;
           font-size: 3.5rem;
           font-family: "Fjalla One", sans-serif; }
+  .dashboard .assign_employees,
   .dashboard .employees,
   .dashboard .feedback {
     display: flex;
     justify-content: space-between; }
+    .dashboard .assign_employees__table,
     .dashboard .employees__table,
     .dashboard .feedback__table {
       width: 100%; }
+      .dashboard .assign_employees__table .add-employee,
       .dashboard .employees__table .add-employee,
       .dashboard .feedback__table .add-employee {
         font-size: 1.4rem !important;
         margin-bottom: 1rem; }
+      .dashboard .assign_employees__table td.actions,
       .dashboard .employees__table td.actions,
       .dashboard .feedback__table td.actions {
         text-align: center;
         position: relative; }
+        .dashboard .assign_employees__table td.actions .group,
         .dashboard .employees__table td.actions .group,
         .dashboard .feedback__table td.actions .group {
           width: 100%;
@@ -710,23 +724,51 @@ section.employee-review {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%); }
+        .dashboard .assign_employees__table td.actions a,
         .dashboard .employees__table td.actions a,
         .dashboard .feedback__table td.actions a {
           color: #475C8A;
           margin-right: 1rem; }
+          .dashboard .assign_employees__table td.actions a.add,
           .dashboard .employees__table td.actions a.add,
           .dashboard .feedback__table td.actions a.add {
             color: #39ACFC; }
+        .dashboard .assign_employees__table td.actions button,
         .dashboard .employees__table td.actions button,
         .dashboard .feedback__table td.actions button {
           cursor: pointer; }
+          .dashboard .assign_employees__table td.actions button.edit,
           .dashboard .employees__table td.actions button.edit,
           .dashboard .feedback__table td.actions button.edit {
             color: green;
             margin-right: 1rem; }
+          .dashboard .assign_employees__table td.actions button:last-child,
           .dashboard .employees__table td.actions button:last-child,
           .dashboard .feedback__table td.actions button:last-child {
             color: tomato; }
+  .dashboard .assign_employees .invalid-feedback {
+    margin-bottom: 0; }
+  @media only screen and (max-width: 37.5em) {
+    .dashboard .assign_employees .flexFit {
+      flex-direction: column; } }
+  .dashboard .assign_employees .flexFit .select {
+    flex: 0 0 80%; }
+    @media only screen and (max-width: 75em) {
+      .dashboard .assign_employees .flexFit .select {
+        flex: 0 0 75%; } }
+    @media only screen and (max-width: 56.25em) {
+      .dashboard .assign_employees .flexFit .select {
+        flex: 0 0 70%; } }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard .assign_employees .flexFit .select {
+        flex: 1;
+        width: 100%; } }
+  .dashboard .assign_employees .flexFit button {
+    margin-top: 1rem;
+    margin-left: 1rem; }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard .assign_employees .flexFit button {
+        margin-top: 1.5rem; } }
 
 .homepage {
   height: 100vh; }
@@ -829,7 +871,12 @@ section.employee-review {
   .feedback-page section.feedback-form {
     flex: 0 0 62%; }
     .feedback-page section.feedback-form .rating {
-      margin: 2rem 0; }
+      margin: 2rem 0;
+      flex-wrap: wrap; }
+    .feedback-page section.feedback-form .invalid-feedback {
+      text-align: center;
+      flex: 1;
+      margin-top: 1rem; }
     .feedback-page section.feedback-form .input-group {
       justify-content: space-between; }
       .feedback-page section.feedback-form .input-group label {
@@ -852,5 +899,7 @@ section.employee-review {
       flex: 0 0 22% !important; }
     .feedback-page .userFeedback__info .detail {
       flex: 0 0 74% !important; }
+  .feedback-page .invalid-feedback {
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

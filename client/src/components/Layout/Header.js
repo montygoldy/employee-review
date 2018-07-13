@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/Actions/authActions";
+import { persistor } from "../../redux/Store";
 
 class Header extends Component {
   logoutHandle = e => {
     e.preventDefault();
     this.props.logoutUser();
+    persistor.purge();
   };
 
   render() {

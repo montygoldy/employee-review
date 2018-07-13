@@ -4,11 +4,28 @@ const initialState = {
   loading: false,
   employees: [],
   employee: {},
-  errors: {}
+  assignedEmployees: []
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.ASSIGN_EMPLOYEES:
+      return {
+        ...state,
+        assignedEmployees: action.payload
+      };
+
+    case actionTypes.GET_ASSIGN_EMPLOYEES_REQUEST:
+      return {
+        ...state,
+        loading: true
+      };
+    case actionTypes.GET_ASSIGN_EMPLOYEES:
+      return {
+        ...state,
+        assignedEmployees: action.payload,
+        loading: false
+      };
     case actionTypes.GET_EMPLOYEES_REQUEST:
       return {
         ...state,
@@ -32,17 +49,14 @@ export default (state = initialState, action) => {
         employees: [action.payload, ...state.employees],
         loading: false
       };
-    case actionTypes.ADD_EMPLOYEE_REQUEST:
-      return {
-        ...state,
-        loading: true
-      };
     case actionTypes.UPDATE_EMPLOYEE:
       return {
         ...state,
         employees: state.employees.map(
           employee =>
-            employee.id === action.payload.id ? action.payload : employee
+            employee.employeeId === action.payload.employeeId
+              ? action.payload
+              : employee
         )
       };
     case actionTypes.DELETE_EMPLOYEE:

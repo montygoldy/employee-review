@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "../redux/utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../redux/Actions/authActions";
 import Loader from "./Reusable/Loader";
+import "react-select/dist/react-select.css";
 
 // Check for token
 if (localStorage.jwtToken) {

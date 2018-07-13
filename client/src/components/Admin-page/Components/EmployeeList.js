@@ -11,7 +11,6 @@ const EmployeeList = ({ employees }) => {
       dateOfJoining={employee.dateOfJoining}
       employeeId={employee.employeeId}
       funFact={employee.funFact}
-      id={employee.id}
       image={employee.image}
     />
   ));

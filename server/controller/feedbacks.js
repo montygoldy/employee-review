@@ -41,15 +41,17 @@ module.exports = {
       feedbackFields.con = req.body.con;
       feedbackFields.comments = req.body.comments;
       feedbackFields.rating = req.body.rating;
+      feedbackFields.employeeId = req.params.employeeId;
 
-      let feedback = await Feedback.findOne({
-        user: feedbackFields.reviewerId,
+      let feedback = await Feedback.find({
+        employeeId: req.params.employeeId,
       });
 
-      if (feedback) {
-        errors.alreadyFeedback = 'You have already submitted feedback to this employee';
+      if (feedback.filter(f => f.reviewerId.toString() === req.user.id).length > 0) {
+        errors.alreadyReviewed = 'You have already reviewed this employee';
         return res.status(404).json(errors);
       }
+
 
       // Create new feedback
       feedback = await new Feedback(feedbackFields).save();

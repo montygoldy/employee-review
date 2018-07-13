@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Moment from "react-moment";
 
 const EmployeeInfo = ({ employee }) => {
   return (
@@ -24,12 +25,12 @@ const EmployeeInfo = ({ employee }) => {
               <div className="detail">{employee.title}</div>
             </li>
             <li>
-              <div className="title">Review period</div>
-              <div className="detail">12/7/2017 to 12/10/2017</div>
-            </li>
-            <li>
               <div className="title">Date of joining:</div>
-              <div className="detail">{employee.dateOfJoining}</div>
+              <div className="detail">
+                <Moment format="DD / MM / YYYY">
+                  {employee.dateOfJoining}
+                </Moment>
+              </div>
             </li>
             <li>
               <div className="title">Fun Fact:</div>

@@ -5,6 +5,7 @@ const Employee = require('../models/Employee');
 const validateEmployeeInput = require('../validations/Employee');
 
 module.exports = {
+
   getAllEmployees: async (req, res) => {
     const errors = {};
     try {
@@ -47,7 +48,7 @@ module.exports = {
     try {
       // If errors
       if (!isValid) {
-        res.status(400).json(errors);
+        return res.status(400).json(errors);
       }
 
       // Get Fields and creating a json object
@@ -56,7 +57,11 @@ module.exports = {
       if (req.body.name) employeeFields.name = req.body.name;
       if (req.body.title) employeeFields.title = req.body.title;
       if (req.body.funFact) employeeFields.funFact = req.body.funFact;
-      if (req.body.image) employeeFields.image = req.body.image;
+      if (req.body.image) {
+        employeeFields.image = req.body.image;
+      } else {
+        employeeFields.image = 'http://via.placeholder.com/300x200';
+      }
       if (req.body.dateOfJoining) employeeFields.dateOfJoining = req.body.dateOfJoining;
 
       // Check employee if exists

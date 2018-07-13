@@ -4,10 +4,8 @@ import EditEmployeeModal from "../Components/EditEmployeeModal";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import {
-  deleteEmployee,
-  getEmployeeDetails
-} from "../../../redux/Actions/employeeActions";
+import { deleteEmployeeRequest } from "../../../redux/Actions/employeeActions";
+import Moment from "react-moment";
 
 class EmployeeItem extends Component {
   state = {
@@ -21,12 +19,11 @@ class EmployeeItem extends Component {
 
   //dispatching delete employee action
   deleteEmployee = employeeId => {
-    this.props.deleteEmployee(employeeId);
+    this.props.deleteEmployeeRequest(employeeId);
   };
 
   render() {
     const {
-      id,
       employeeId,
       name,
       title,
@@ -39,7 +36,9 @@ class EmployeeItem extends Component {
         <td>{name}</td>
         <td>{employeeId}</td>
         <td>{title}</td>
-        <td>{dateOfJoining}</td>
+        <td>
+          <Moment format="DD / MM / YYYY">{dateOfJoining}</Moment>
+        </td>
         <td>{funFact}</td>
         <td className="actions">
           <div className="group">
@@ -63,7 +62,6 @@ class EmployeeItem extends Component {
                 funFact={funFact}
                 dateOfJoining={dateOfJoining}
                 image={image}
-                id={id}
                 onClose={this.editEmployee}
               />
             </Modal>
@@ -84,12 +82,11 @@ EmployeeItem.propTypes = {
   funFact: PropTypes.string.isRequired,
   employeeId: PropTypes.string.isRequired,
   dateOfJoining: PropTypes.string.isRequired,
-  deleteEmployee: PropTypes.func.isRequired,
-  image: PropTypes.string,
-  getEmployeeDetails: PropTypes.func.isRequired
+  deleteEmployeeRequest: PropTypes.func.isRequired,
+  image: PropTypes.string
 };
 
 export default connect(
   null,
-  { deleteEmployee, getEmployeeDetails }
+  { deleteEmployeeRequest }
 )(EmployeeItem);

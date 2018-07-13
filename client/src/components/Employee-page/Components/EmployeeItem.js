@@ -33,8 +33,4 @@ EmployeeItem.propTypes = {
   employeeId: PropTypes.string.isRequired
 };
 
-EmployeeItem.defaultProps = {
-  image: "http://via.placeholder.com/300x200"
-};
-
 export default EmployeeItem;

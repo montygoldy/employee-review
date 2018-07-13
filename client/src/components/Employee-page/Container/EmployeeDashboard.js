@@ -2,16 +2,21 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import EmployeeList from "../Components/EmployeeList";
 import PropTypes from "prop-types";
-import Loader from "../../Reusable/Loader";
 import * as selectors from "../../../redux/Selectors/EmployeeFeedback";
+
 class EmployeeDashboard extends Component {
   render() {
-    const { employees, loading } = this.props.employeeList;
+    const { assingedEmployeesList } = this.props;
+
     return (
       <div className="container">
         <section className="employee-review">
           <h3 className="page-heading">Review Employees</h3>
-          {loading ? <Loader /> : <EmployeeList employees={employees} />}
+          {assingedEmployeesList.length ? (
+            <EmployeeList employees={assingedEmployeesList} />
+          ) : (
+            <h3>NO EMPLOYEES FOR REVIEW</h3>
+          )}
         </section>
       </div>
     );
@@ -19,11 +24,11 @@ class EmployeeDashboard extends Component {
 }
 
 EmployeeDashboard.propTypes = {
-  employeeList: PropTypes.object.isRequired
+  assingedEmployeesList: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
-  employeeList: selectors.EmployeeSelector(state)
+  assingedEmployeesList: selectors.AssignedUserSelector(state)
 });
 
 export default connect(
