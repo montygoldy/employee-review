@@ -104,7 +104,7 @@ class AddEmployeeModal extends Component {
           <InputField
             name="dateOfJoining"
             placeholder="Date of Joining mm/dd/yyyy"
-            type="text"
+            type="date"
             value={this.state.dateOfJoining}
             onChange={this.handleChange}
             label={false}

@@ -103,7 +103,6 @@ class EditEmployeeModal extends Component {
           />
           <InputField
             name="dateOfJoining"
-            placeholder="Date of Joining dd/mm/yyyy"
             type="text"
             value={this.state.dateOfJoining}
             onChange={this.handleChange}

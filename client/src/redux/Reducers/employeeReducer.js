@@ -9,12 +9,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ASSIGN_EMPLOYEES:
-      return {
-        ...state,
-        assignedEmployees: action.payload
-      };
-
     case actionTypes.GET_ASSIGN_EMPLOYEES_REQUEST:
       return {
         ...state,
@@ -26,6 +20,12 @@ export default (state = initialState, action) => {
         assignedEmployees: action.payload,
         loading: false
       };
+    case actionTypes.ASSIGN_EMPLOYEES:
+      return {
+        ...state,
+        assignedEmployees: action.payload
+      };
+
     case actionTypes.GET_EMPLOYEES_REQUEST:
       return {
         ...state,
