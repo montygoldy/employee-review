@@ -60,10 +60,6 @@ export default {
           `http://localhost:3001/api/feedbacks/${newFeedbackData.id}`,
           newFeedbackData
         )
-        .then(response => response.data),
-    feedbackInfo: employeeId =>
-      axios
-        .post(`http://localhost:3001/api/feedbacks/${employeeId}`)
         .then(response => response.data)
   }
 };

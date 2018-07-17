@@ -1,11 +1,23 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/Actions/authActions";
 import { persistor } from "../../redux/Store";
+import GuestLinks from "./Navigation/GuestLinks";
+import AuthLinks from "./Navigation/AuthLinks";
 
 class Header extends Component {
+  state = {
+    SideDrawerOpen: false
+  };
+
+  // Responsive nav methods
+  sideDrawerToggle = () => {
+    this.setState(prevState => ({
+      SideDrawerOpen: !prevState.SideDrawerOpen
+    }));
+  };
+
   logoutHandle = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -14,64 +26,33 @@ class Header extends Component {
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
-    // After Login Menu
-    const authLinks = (
-      <ul className="flexFit">
-        <li className="header__nav-item">
-          <span className="username">{user.name}</span>
-        </li>
-        {user.isAdmin && (
-          <li className="header__nav-item">
-            <Link className="header__nav-link button" to="/dashboard">
-              <i className="fas fa-sign-in-alt"> </i>
-              Dashboard
-            </Link>
-          </li>
-        )}
-        <li className="header__nav-item">
-          <Link className="header__nav-link button" to="/review">
-            <i className="fas fa-sign-in-alt"> </i>
-            Review
-          </Link>
-        </li>
-        <li className="header__nav-item">
-          <button
-            className="header__nav-link button"
-            onClick={this.logoutHandle}
-          >
-            <i className="fas fa-sign-out-alt" />
-            Logout
-          </button>
-        </li>
-      </ul>
-    );
-
-    //Before Login Menu
-    const guestLinks = (
-      <ul className="flexFit">
-        <li className="header__nav-item">
-          <Link className="header__nav-link button" to="/login">
-            <i className="fas fa-sign-in-alt"> </i>
-            Login
-          </Link>
-        </li>
-        <li className="header__nav-item">
-          <Link className="header__nav-link button" to="/register">
-            <i className="fas fa-sign-up-alt"> </i>
-            Register
-          </Link>
-        </li>
-      </ul>
-    );
-
+    const { SideDrawerOpen } = this.state;
+    let openClass;
+    if (SideDrawerOpen) {
+      openClass = "open";
+    }
     return (
       <header className="header">
         <div className="container flexFit">
           <div className="header__title">
             <h1>Logo</h1>
           </div>
-          <nav className="header__nav">
-            {isAuthenticated ? authLinks : guestLinks}
+          <nav className="nav flexFit">
+            <div className={`navigation  ${openClass}`}>
+              {isAuthenticated ? (
+                <AuthLinks user={user} logout={this.logoutHandle} />
+              ) : (
+                <GuestLinks />
+              )}
+            </div>
+
+            <div className="nav__toggle">
+              <button className="toggle-button" onClick={this.sideDrawerToggle}>
+                <div className="toggle-button-line"> </div>
+                <div className="toggle-button-line"> </div>
+                <div className="toggle-button-line"> </div>
+              </button>
+            </div>
           </nav>
         </div>
       </header>

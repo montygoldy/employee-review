@@ -57,4 +57,16 @@
     }
     ;
   }
+  @if $breakpoint==min-phone {
+    @media only screen and (min-width: 47.5em) {
+      @content
+    }
+    ;
+  }
+  @if $breakpoint==max-phone {
+    @media only screen and (max-width: 47.5em) {
+      @content
+    }
+    ;
+  }
 }

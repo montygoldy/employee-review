@@ -33,18 +33,8 @@ function* updateFeedbackSaga(action) {
   }
 }
 
-function* getFeedbackSaga(action) {
-  try {
-    const feedback = yield call(api.feedback.feedbackInfo, action.payload);
-    yield put(actions.getFeedback(feedback));
-  } catch (err) {
-    yield put(actions.getFeedbackErrors(err.response.data));
-  }
-}
-
 export function* feedbackSaga() {
   yield takeLatest(actionTypes.ADD_FEEDBACK_REQUEST, addFeedbackSaga);
   yield takeLatest(actionTypes.GET_FEEDBACKS_REQUEST, getFeedbacksSaga);
   yield takeLatest(actionTypes.UPDATE_FEEDBACK_REQUEST, updateFeedbackSaga);
-  yield takeLatest(actionTypes.GET_FEEDBACK_REQUEST, getFeedbackSaga);
 }

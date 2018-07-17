@@ -13,34 +13,4 @@
       font-size: 3rem !important;
     }
   }
-  &__nav-item {
-    font-family: $secondary-font;
-    font-weight: 500;
-    font-size: 1.6rem;
-    color: $color-white;
-    margin-right: 2rem;
-    font-weight: 500;
-    font-size: 1.5rem;
-
-    .username{
-      text-transform: capitalize;
-      font-family: $primary-font;
-      font-size: 1.6rem;
-      color: $text-color-dark;
-    }
-  }
-  &__nav-link {
-    font-size: 1.5rem;
-    color: $color-white;
-    transform: scale(1);
-    padding-bottom: 10px;
-    @include transition(all, .3s);
-    &:hover {
-      border-bottom: 2px solid $text-color-dark;
-      color: $text-color-dark;
-    }
-    i {
-      margin-right: 5px;
-    }
-  }
 }

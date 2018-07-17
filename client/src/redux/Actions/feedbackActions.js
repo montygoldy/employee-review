@@ -46,19 +46,3 @@ export const updateFeedbackErrors = errors => ({
   type: actionTypes.GET_ERRORS,
   payload: errors
 });
-
-//Getting a feedback for a particular employee
-export const getFeedbackRequest = employeeId => ({
-  type: actionTypes.GET_FEEDBACK_REQUEST,
-  payload: employeeId
-});
-
-export const getFeedback = feedback => ({
-  type: actionTypes.GET_FEEDBACK,
-  payload: feedback
-});
-
-export const getFeedbackErrors = errors => ({
-  type: actionTypes.GET_ERRORS,
-  payload: errors
-});

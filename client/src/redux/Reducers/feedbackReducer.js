@@ -2,7 +2,6 @@ import * as actionTypes from "../Actions/types";
 
 const initialState = {
   feedbacks: [],
-  feedback: {},
   loading: false
 };
 
@@ -31,12 +30,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         feedbacks: [action.payload, ...state.feedbacks],
-        loading: false
-      };
-    case actionTypes.GET_FEEDBACK:
-      return {
-        ...state,
-        feedback: action.payload,
         loading: false
       };
     default:
