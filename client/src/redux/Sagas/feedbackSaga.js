@@ -27,7 +27,6 @@ function* updateFeedbackSaga(action) {
   try {
     const updateData = yield call(api.feedback.edit, action.payload);
     yield put(actions.updateFeedback(updateData));
-    console.log(updateData);
   } catch (err) {
     yield put(actions.updateFeedbackErrors(err.response.data));
   }

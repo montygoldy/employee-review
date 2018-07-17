@@ -8,7 +8,7 @@ export const assignEmployeesRequest = data => ({
 
 export const assignEmployees = selectedEmployees => ({
   type: actionTypes.ASSIGN_EMPLOYEES,
-  payload: selectedEmployees
+  payload: selectedEmployees.employeeId
 });
 
 export const assignEmployeesErrors = errors => ({

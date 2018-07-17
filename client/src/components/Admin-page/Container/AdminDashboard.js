@@ -63,7 +63,6 @@ class AdminDashboard extends Component {
       feedbackList: { feedbacks },
       userList: { users }
     } = this.props;
-    console.log(this.props);
     // Custom data for select
     const data = employees.map(employee => ({
       label: employee.name,

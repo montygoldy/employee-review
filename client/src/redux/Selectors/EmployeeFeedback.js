@@ -19,7 +19,6 @@ export const AssignedUserSelector = createSelector(
   employee => {
     // destructuring the assigned emloyees array
     const data = employee.assignedEmployees;
-
     return employee.employees.filter(({ employeeId }) =>
       data.includes(employeeId)
     );

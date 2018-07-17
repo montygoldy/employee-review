@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
         ...state,
         feedbacks: state.feedbacks.map(
           feedback =>
-            feedback.id === action.payload.id ? action.payload : feedback
+            feedback._id === action.payload._id ? action.payload : feedback
         )
       };
     case actionTypes.ADD_FEEDBACK:
