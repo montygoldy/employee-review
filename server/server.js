@@ -39,13 +39,12 @@ app.use('/api/feedbacks', feedbacks);
 
 // Server Static assets if in production
 if (process.env.NODE_ENV === 'production') {
-// Set Static folder
-  app.use(express.static('../client/build)');
+  // Set static folder
+  app.use(express.static('../client/build'));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  })
-
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
+  });
 }
 
 // Start the server
