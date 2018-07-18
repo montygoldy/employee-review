@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node server.js",
-    "server": "nodemon --exec babel-node server.js",
+    "start": "babel-node server/server.js",
+    "server": "nodemon --exec babel-node server/server.js",
     "client": "npm start --prefix client",
     "client-install": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
