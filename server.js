@@ -7,14 +7,14 @@ const cors = require('cors');
 const path = require('path');
 
 // Routes import
-const users = require('./routes/users');
-const employees = require('./routes/employees');
-const feedbacks = require('./routes/feedbacks');
+const users = require('./server/routes/users');
+const employees = require('./server/routes/employees');
+const feedbacks = require('./server/routes/feedbacks');
 
 const app = express();
 
 // Db config
-const db = require('./config/keys').mongoURI;
+const db = require('./server/config/keys').mongoURI;
 
 // Connect to mongodb
 mongoose
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use(passport.initialize());
-require('./services/passport');
+require('./server/services/passport')(passport);
 
 // Routes
 app.use('/api/users', users);
