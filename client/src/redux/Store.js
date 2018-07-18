@@ -17,7 +17,10 @@ const pReducer = persistReducer(persistConfig, rootReducer);
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
-export const store = createStore(pReducer, applyMiddleware(...middleware));
+export const store = createStore(
+  pReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
 sagaMiddleware.run(rootSaga);
 
